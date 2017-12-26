@@ -844,7 +844,7 @@ msgid "Submit"
 msgstr "Absenden"
 
 msgid "Submit and repeat"
-msgstr "Bestätigen und Wiederholen"
+msgstr "Absenden und Wiederholen"
 
 msgid "Switch to administration area."
 msgstr "Wechsel zum Administrationsbereich."

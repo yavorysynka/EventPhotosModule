@@ -1,13 +1,13 @@
 {# purpose of this template: inclusion template for display of related album items #}
-{% set hasAdminPermission = hasPermission('RKFineArtPhotographerModule:AlbumItem:', '::', 'ACCESS_EDIT') %}
-{% set hasEditPermission = hasPermission('RKFineArtPhotographerModule:AlbumItem:', '::', 'ACCESS_EDIT') %}
+{% set hasAdminPermission = hasPermission('RKEventPhotosModule:AlbumItem:', '::', 'ACCESS_EDIT') %}
+{% set hasEditPermission = hasPermission('RKEventPhotosModule:AlbumItem:', '::', 'ACCESS_EDIT') %}
 {% if noLink is not defined %}
     {% set noLink = false %}
 {% endif %}
 {% if items|default and items|length > 0 %}
-<div id="flexImageParameters" class="hidden" data-row-height="{{ getModVar('RKFineArtPhotographerModule', 'rowHeight') }}"></div>
-{% if getModVar('RKFineArtPhotographerModule', 'rowHeight') == true %}
-	{% set myRowHeight = getModVar('RKFineArtPhotographerModule', 'rowHeight', '200') %}
+<div id="flexImageParameters" class="hidden" data-row-height="{{ getModVar('RKEventPhotosModule', 'rowHeight') }}"></div>
+{% if getModVar('RKEventPhotosModule', 'rowHeight') == true %}
+	{% set myRowHeight = getModVar('RKEventPhotosModule', 'rowHeight', '200') %}
 	{% set maxThumbWidth = myRowHeight * 10 %}
 	{% set myThumbOptions = {thumbnail: {size: [maxThumbWidth, myRowHeight], mode: 'inset' }} %}
 {% else %}
@@ -28,7 +28,7 @@
 {% if item.image is not empty and item.imageMeta.isImage %}
 
 {% set dataCaption = '' %}
-{% set albumItemUrl = path('rkfineartphotographermodule_albumitem_' ~ routeArea ~ 'display', {'id': item.getId()}) %}
+{% set albumItemUrl = path('rkeventphotosmodule_albumitem_' ~ routeArea ~ 'display', {'id': item.getId()}) %}
 {% if item.copyright is not empty %}
 	{% set dataCaption = 'Copyright: ' ~ item.copyright ~ '&lt;br /&gt;' %}
 {%endif%}
@@ -36,7 +36,7 @@
 {% set myImageWidth = myRowHeight * item.imageMeta.width / item.imageMeta.height %}
 <a href="{{ item.imageUrl }}" data-fancybox="gallery" data-caption="{{dataCaption|raw}}"  >  
     <div class="item" data-w="{{myImageWidth}}" data-h="{{myRowHeight}}">
-	<img src="{{ item.image.getPathname()|imagine_filter('zkroot', myThumbOptions) }}" alt="{{ item|rkfineartphotographermodule_formattedTitle|e('html_attr') }}"  />
+	<img src="{{ item.image.getPathname()|imagine_filter('zkroot', myThumbOptions) }}" alt="{{ item|rkeventphotosmodule_formattedTitle|e('html_attr') }}"  />
 	</div>
 </a>
 {% endif %}
