@@ -1,0 +1,111 @@
+{# purpose of this template: albums user list view #}
+{% extends 'RKEventPhotosModule::base.html.twig' %}
+{% block title own ? __('My albums') : __('Albums list') %}
+{% block appTitle %}{% endblock %}
+{% block content %}
+<div class="rkeventphotosmodule-album rkeventphotosmodule-view">
+	{% if hasPermission('RKEventPhotosModule::', '::', 'ACCESS_EDIT') %}
+    <p class="alert alert-info">{{ __('Please add your photos only to your own album.') }}</p>
+	{% endif %}
+	
+    {{ block('page_nav_links') }}
+
+    {{ include('@RKEventPhotosModule/Album/viewQuickNav.html.twig') }}{# see template file for available options #}
+
+        
+		<div>
+		
+		
+		
+		<div class="row">
+		
+		
+		{% for album in items %}
+		<div class="col-sm-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading height80">
+					
+						<a class="white" href="{{ path('rkeventphotosmodule_album_' ~ routeArea ~ 'display', {'id': album.getId()}) }}">{% spaceless %}
+							{{ album|rkeventphotosmodule_formattedTitle }}
+						  {% endspaceless %}</a>
+					
+				</div>
+				<div class="panel-body height180">
+					{{ album.albumDescription|raw }}
+					
+											
+				</div>	
+				<div class="panel-footer">
+				<div class="row">
+
+					<div class="col-xs-10">
+					{% if featureActivationHelper.isEnabled(constant('RK\\EventPhotosModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'album') %}
+						
+							{% if album.categories is defined %}
+							<p>{{ __('Categories') }}: 
+							{% for catMapping in album.categories %}
+								{{ catMapping.category.display_name[app.request.locale]|default(catMapping.category.name) }}
+							{% endfor %}
+							</p>
+							{% endif %}		
+						{%endif%}
+					</div>
+					{% if hasPermission('RKEventPhotosModule:Album:', '::', 'ACCESS_EDIT') %}
+						{% set itemActions = knp_menu_get('RKEventPhotosModule:ItemActionsMenu:menu', [], {entity: album, area: routeArea, context: 'view'}) %}
+						<div class="dropdown col-xs-2">
+							<a id="itemActions{{ album.getKey() }}DropDownToggleStart" role="button" data-toggle="dropdown" data-target="#" href="javascript:void(0);" class="hidden dropdown-toggle"><i class="fa fa-tasks"></i> <span class="caret"></span></a>
+							{{ knp_menu_render(itemActions, {template: 'ZikulaMenuModule:Override:bootstrap_fontawesome.html.twig'}) }}
+						</div>	
+					{%endif%}					
+				</div>
+				</div>
+			</div>		  
+		</div>
+		{% endfor %}
+			
+		
+
+		</div>
+		
+		
+		</div>
+        
+        {% if all != 1 and pager|default %}
+            {{ pager({rowcount: pager.amountOfItems, limit: pager.itemsPerPage, display: 'page', route: 'rkeventphotosmodule_album_' ~ routeArea ~ 'view'}) }}
+        {% endif %}
+
+
+    {{ block('display_hooks') }}
+</div>
+{% endblock %}
+{% block page_nav_links %}
+    <p>
+        {% if canBeCreated %}
+            {% if hasPermission('RKEventPhotosModule:Album:', '::', 'ACCESS_EDIT') %}
+                {% set createTitle = __('Create album') %}
+                <a href="{{ path('rkeventphotosmodule_album_' ~ routeArea ~ 'edit') }}" title="{{ createTitle|e('html_attr') }}"><i class="fa fa-plus"></i> {{ createTitle }}</a>
+            {% endif %}
+        {% endif %}
+        {% if all == 1 %}
+            {% set linkTitle = __('Back to paginated view') %}
+            {% set routeArgs = own ? {own: 1} : {} %}
+            <a href="{{ path('rkeventphotosmodule_album_' ~ routeArea ~ 'view', routeArgs) }}" title="{{ linkTitle|e('html_attr') }}"><i class="fa fa-table"></i> {{ linkTitle }}</a>
+        {% else %}
+            {% set linkTitle = __('Show all entries') %}
+            {% set routeArgs = own ? {all: 1, own: 1} : {all: 1} %}
+            <a href="{{ path('rkeventphotosmodule_album_' ~ routeArea ~ 'view', routeArgs) }}" title="{{ linkTitle|e('html_attr') }}"><i class="fa fa-table"></i> {{ linkTitle }}</a>
+        {% endif %}
+    </p>
+{% endblock %}
+{% block display_hooks %}
+    
+    {# here you can activate calling display hooks for the view page if you need it #}
+    {# % if routeArea != 'admin' %}
+        {% set hooks = notifyDisplayHooks(eventName='rkeventphotosmodule.ui_hooks.albums.display_view', urlObject=currentUrlObject, outputAsArray=true) %}
+        {% if hooks is iterable and hooks|length > 0 %}
+            {% for area, hook in hooks %}
+                <div class="z-displayhook" data-area="{{ area|e('html_attr') }}">{{ hook|raw }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endif % #}
+{% endblock %}

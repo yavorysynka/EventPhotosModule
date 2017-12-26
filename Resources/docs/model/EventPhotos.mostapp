@@ -1,0 +1,108 @@
+application "EventPhotos" targets ZK15 {
+    documentation "Event Photos Module is offering the possibility to share interesting photos. If you want to share yourself your photos please contact the site administrator and ask for the rights."
+    vendor "RK"
+    author "Ralf Koester"
+    email "ralf@familie-koester.de"
+    url "http://k62.de"
+    version "0.1.0"
+    prefix "event"
+    generateModerationBlock false
+    generateModerationPanel false
+    generatePendingContentSupport false
+    generateRssTemplates false
+    generateAtomTemplates false
+    generateCsvTemplates false
+    generateXmlTemplates false
+    generateJsonTemplates false
+    generateKmlTemplates false
+    generateIcsTemplates false
+    separateAdminTemplates true
+    displayActionsStyle BUTTON_GROUP
+    skipFiles "README.md"
+    markFiles "Helper/EntityDisplayHelper.php,\r\nResources/views/base.html.twig,\r\nResources/views/AlbumItem/includeDisplayItemListMany.html.twig,\r\nResources/views/Album/display.html.twig,\r\nResources/views/Album/view.html.twig,\r\nResources/views/Album/viewQuickNav.html.twig,\r\nEntity/Repository/AlbumRepository.php, \r\nFineArtPhotographerModuleInstaller.php,\r\n.gitignore"
+    entities {
+        entity "album" leading categorisable {
+            documentation "Please add your photos only to your own album."
+            nameMultiple "albums"
+            displayPattern "#albumDate#, #albumTitle#"
+            hasArchive false
+            ownerPermission true
+            formAwareHookProvider DISABLED
+            uiHooksProvider ENABLED
+            fields {
+                string "albumTitle" translatable {
+                    documentation "Choose a title for your album. The event name seem to be a good choice. Date and creator name will be automatically included."
+                },
+                datetime "albumDate" {
+                    documentation "The date will be included in the headline"
+                    components DATE
+                },
+                text "albumDescription" translatable {
+                    documentation "This description is used to give a short introduction about the event. It is not mandatory."
+                    mandatory false
+                    displayType DISPLAY
+                }
+            }
+            actions {
+                mainAction "Index",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit"
+            ,
+                deleteAction "Delete"
+            }
+        },
+        entity "albumItem" categorisable {
+            documentation "Please add your photos only to your own album."
+            nameMultiple "albumItems"
+            displayPattern "#imageTitle#"
+            ownerPermission true
+            fields {
+                upload "image" {
+                    documentation "The image must fit to the maximum dimension. If shrinking is enabled it will be shrinked automatically."
+                maxWidth 0
+                    maxHeight 0
+                },
+                string "copyright" {
+                    documentation "You may want to label your image with your copyright."
+                    mandatory false
+                }
+            ,
+                string "imageTitle" translatable {
+                    documentation "sometimes it is nice to give the image a title"
+                    mandatory false
+                }
+            ,
+                text "imageDescription" translatable {
+                    documentation "You may want to tell a bit about the shooting and the parameters."
+                    mandatory false
+                }
+            }
+            actions {
+                mainAction "Index",
+                viewAction "View",
+                displayAction "Display",
+                editAction "Edit",
+                deleteAction "Delete"
+            }
+        }
+    }
+    relations {
+        one2many bidirectional {
+            source "album"
+            sourceAlias "album"
+            target "albumItem"
+            targetAlias "albumItems"
+        }
+    }
+variables {
+        varContainer "SpecialAlbumSettings" {
+            fields {
+                integer "rowHeight" {
+                    documentation "The maximum height of a row in the image album."
+                    defaultValue "190"
+                }
+            }
+        }
+    }
+}

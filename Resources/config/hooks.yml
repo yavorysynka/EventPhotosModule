@@ -1,0 +1,53 @@
+services:
+    rk_eventphotos_module.hook_subscriber.filter_hooks.albums:
+        class: RK\EventPhotosModule\HookSubscriber\AlbumFilterHooksSubscriber
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: zikula.hook_subscriber, areaName: 'subscriber.rkeventphotosmodule.filter_hooks.albums' }
+
+    rk_eventphotos_module.hook_subscriber.form_aware_hook.albums:
+        class: RK\EventPhotosModule\HookSubscriber\AlbumFormAwareHookSubscriber
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: zikula.hook_subscriber, areaName: 'subscriber.rkeventphotosmodule.form_aware_hook.albums' }
+
+    rk_eventphotos_module.hook_subscriber.ui_hooks.albums:
+        class: RK\EventPhotosModule\HookSubscriber\AlbumUiHooksSubscriber
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: zikula.hook_subscriber, areaName: 'subscriber.rkeventphotosmodule.ui_hooks.albums' }
+
+    rk_eventphotos_module.hook_subscriber.filter_hooks.albumitems:
+        class: RK\EventPhotosModule\HookSubscriber\AlbumItemFilterHooksSubscriber
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: zikula.hook_subscriber, areaName: 'subscriber.rkeventphotosmodule.filter_hooks.albumitems' }
+
+    rk_eventphotos_module.hook_subscriber.form_aware_hook.albumitems:
+        class: RK\EventPhotosModule\HookSubscriber\AlbumItemFormAwareHookSubscriber
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: zikula.hook_subscriber, areaName: 'subscriber.rkeventphotosmodule.form_aware_hook.albumitems' }
+
+    rk_eventphotos_module.hook_subscriber.ui_hooks.albumitems:
+        class: RK\EventPhotosModule\HookSubscriber\AlbumItemUiHooksSubscriber
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: zikula.hook_subscriber, areaName: 'subscriber.rkeventphotosmodule.ui_hooks.albumitems' }
+
+    rk_eventphotos_module.hook_provider.ui_hooks.albums:
+        class: RK\EventPhotosModule\HookProvider\AlbumUiHooksProvider
+        arguments:
+            - "@translator.default"
+            - "@request_stack"
+            - "@rk_eventphotos_module.entity_factory"
+            - "@twig"
+        tags:
+            - { name: zikula.hook_provider, areaName: 'provider.rkeventphotosmodule.ui_hooks.albums' }
+

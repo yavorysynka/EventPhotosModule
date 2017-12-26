@@ -1,0 +1,49 @@
+{# Purpose of this template: Display one certain album within an external context #}
+<div id="album{{ album.getKey() }}" class="rkeventphotosmodule-external-album">
+{% if displayMode == 'link' %}
+    <p class="rkeventphotosmodule-external-link">
+    <a href="{{ path('rkeventphotosmodule_album_display', {'id': album.getId()}) }}" title="{{ album|rkeventphotosmodule_formattedTitle|e('html_attr') }}">
+    {{ album|rkeventphotosmodule_formattedTitle|notifyFilters('eventphotos.filter_hooks.albums.filter')|safeHtml }}
+    </a>
+    </p>
+{% endif %}
+{% if hasPermission('RKEventPhotosModule::', '::', 'ACCESS_EDIT') %}
+    {# for normal users without edit permission show only the actual file per default #}
+    {% if displayMode == 'embed' %}
+        <p class="rkeventphotosmodule-external-title">
+            <strong>{{ album|rkeventphotosmodule_formattedTitle|notifyFilters('eventphotos.filter_hooks.albums.filter')|safeHtml }}</strong>
+        </p>
+    {% endif %}
+{% endif %}
+
+{% if displayMode == 'link' %}
+{% elseif displayMode == 'embed' %}
+    <div class="rkeventphotosmodule-external-snippet">
+        &nbsp;
+    </div>
+
+    {# you can distinguish the context like this: #}
+    {# % if source == 'block' %}
+        ... detail block
+    {% elseif source == 'contentType' %}
+        ... detail content type
+    {% elseif source == 'scribite' %}
+        ...
+    {% endif % #}
+
+    {# you can enable more details about the item: #}
+    {#
+        <p class="rkeventphotosmodule-external-description">
+            {% if album.albumDescription is not empty %}{{ album.albumDescription }}<br />{% endif %}
+            {% if featureActivationHelper.isEnabled(constant('RK\\EventPhotosModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'album') %}
+                <dl class="category-list">
+                {% for propName, catMapping in album.categories %}
+                    <dt>{{ propName }}</dt>
+                    <dd>{{ catMapping.category.display_name[app.request.locale]|default(catMapping.category.name) }}</dd>
+                {% endfor %}
+                </dl>
+            {% endif %}
+        </p>
+    #}
+{% endif %}
+</div>

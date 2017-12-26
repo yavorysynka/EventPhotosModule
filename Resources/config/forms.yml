@@ -1,0 +1,121 @@
+services:
+    # Form types
+    
+    rk_eventphotos_module.form.type.albumquicknav:
+        class: RK\EventPhotosModule\Form\Type\QuickNavigation\AlbumQuickNavType
+        arguments:
+            - "@translator.default"
+            - "@rk_eventphotos_module.listentries_helper"
+            - "@rk_eventphotos_module.feature_activation_helper"
+        tags:
+            - { name: form.type }
+    
+    rk_eventphotos_module.form.type.albumitemquicknav:
+        class: RK\EventPhotosModule\Form\Type\QuickNavigation\AlbumItemQuickNavType
+        arguments:
+            - "@translator.default"
+            - "@request_stack"
+            - "@rk_eventphotos_module.entity_display_helper"
+            - "@rk_eventphotos_module.listentries_helper"
+            - "@rk_eventphotos_module.feature_activation_helper"
+        tags:
+            - { name: form.type }
+    
+    rk_eventphotos_module.form.handler.common:
+        abstract: true
+        arguments:
+            - "@kernel"
+            - "@translator.default"
+            - "@form.factory"
+            - "@request_stack"
+            - "@router"
+            - "@logger"
+            - "@zikula_permissions_module.api.permission"
+            - "@zikula_extensions_module.api.variable"
+            - "@zikula_users_module.current_user"
+            - "@rk_eventphotos_module.entity_factory"
+            - "@rk_eventphotos_module.controller_helper"
+            - "@rk_eventphotos_module.model_helper"
+            - "@rk_eventphotos_module.workflow_helper"
+            - "@rk_eventphotos_module.hook_helper"
+            - "@rk_eventphotos_module.translatable_helper"
+            - "@rk_eventphotos_module.feature_activation_helper"
+        calls:
+            - [setLockingApi, ["@?zikula_pagelock_module.api.locking"]]
+    
+    
+    rk_eventphotos_module.form.handler.album:
+        class: RK\EventPhotosModule\Form\Handler\Album\EditHandler
+        parent: rk_eventphotos_module.form.handler.common
+    
+    rk_eventphotos_module.form.type.album:
+        class: RK\EventPhotosModule\Form\Type\AlbumType
+        arguments:
+            - "@translator.default"
+            - "@rk_eventphotos_module.entity_factory"
+            - "@rk_eventphotos_module.collection_filter_helper"
+            - "@rk_eventphotos_module.entity_display_helper"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_eventphotos_module.translatable_helper"
+            - "@rk_eventphotos_module.listentries_helper"
+            - "@rk_eventphotos_module.feature_activation_helper"
+        tags:
+            - { name: form.type }
+    
+    rk_eventphotos_module.form.handler.albumitem:
+        class: RK\EventPhotosModule\Form\Handler\AlbumItem\EditHandler
+        parent: rk_eventphotos_module.form.handler.common
+    
+    rk_eventphotos_module.form.type.albumitem:
+        class: RK\EventPhotosModule\Form\Type\AlbumItemType
+        arguments:
+            - "@translator.default"
+            - "@rk_eventphotos_module.entity_factory"
+            - "@rk_eventphotos_module.collection_filter_helper"
+            - "@rk_eventphotos_module.entity_display_helper"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_eventphotos_module.translatable_helper"
+            - "@rk_eventphotos_module.listentries_helper"
+            - "@rk_eventphotos_module.feature_activation_helper"
+        tags:
+            - { name: form.type }
+    
+    rk_eventphotos_module.form.type.block.itemlist:
+        class: RK\EventPhotosModule\Block\Form\Type\ItemListBlockType
+        arguments:
+            - "@translator.default"
+        tags:
+            - { name: form.type }
+    
+    rk_eventphotos_module.form.type.block.item:
+        class: RK\EventPhotosModule\Block\Form\Type\ItemBlockType
+        arguments:
+            - "@translator.default"
+            - "@rk_eventphotos_module.entity_factory"
+            - "@rk_eventphotos_module.entity_display_helper"
+        tags:
+            - { name: form.type }
+    
+    rk_eventphotos_module.form.type.albumfinder:
+        class: RK\EventPhotosModule\Form\Type\Finder\AlbumFinderType
+        arguments:
+            - "@translator.default"
+            - "@rk_eventphotos_module.feature_activation_helper"
+        tags:
+            - { name: form.type }
+    
+    rk_eventphotos_module.form.type.albumitemfinder:
+        class: RK\EventPhotosModule\Form\Type\Finder\AlbumItemFinderType
+        arguments:
+            - "@translator.default"
+            - "@rk_eventphotos_module.feature_activation_helper"
+        tags:
+            - { name: form.type }
+    
+    rk_eventphotos_module.form.type.config:
+        class: RK\EventPhotosModule\Form\Type\ConfigType
+        arguments:
+            - "@translator.default"
+            - "@rk_eventphotos_module.listentries_helper"
+        tags:
+            - { name: form.type }

@@ -1,0 +1,88 @@
+services:
+    # Event subscribers and listeners
+    rk_eventphotos_module.entity_lifecycle_listener:
+        class: RK\EventPhotosModule\Listener\EntityLifecycleListener
+        arguments:
+            - "@service_container"
+            - "@event_dispatcher"
+            - "@logger"
+        tags:
+            - { name: doctrine.event_subscriber }
+    
+    rk_eventphotos_module.kernel_listener:
+        class: RK\EventPhotosModule\Listener\KernelListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.installer_listener:
+        class: RK\EventPhotosModule\Listener\InstallerListener
+        arguments:
+            - "@rk_eventphotos_module.entity_factory"
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.moduledispatch_listener:
+        class: RK\EventPhotosModule\Listener\ModuleDispatchListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.mailer_listener:
+        class: RK\EventPhotosModule\Listener\MailerListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.theme_listener:
+        class: RK\EventPhotosModule\Listener\ThemeListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.userlogin_listener:
+        class: RK\EventPhotosModule\Listener\UserLoginListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.userlogout_listener:
+        class: RK\EventPhotosModule\Listener\UserLogoutListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.user_listener:
+        class: RK\EventPhotosModule\Listener\UserListener
+        arguments:
+            - "@translator.default"
+            - "@rk_eventphotos_module.entity_factory"
+            - "@zikula_users_module.current_user"
+            - "@logger"
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.userregistration_listener:
+        class: RK\EventPhotosModule\Listener\UserRegistrationListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.users_listener:
+        class: RK\EventPhotosModule\Listener\UsersListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.group_listener:
+        class: RK\EventPhotosModule\Listener\GroupListener
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.thirdparty_listener:
+        class: RK\EventPhotosModule\Listener\ThirdPartyListener
+        arguments:
+            - "@filesystem"
+            - "@request_stack"
+        tags:
+            - { name: kernel.event_subscriber }
+    
+    rk_eventphotos_module.workflow_events_listener:
+        class: RK\EventPhotosModule\Listener\WorkflowEventsListener
+        arguments:
+            - "@zikula_permissions_module.api.permission"
+        tags:
+            - { name: kernel.event_subscriber }
+    

@@ -1,0 +1,13 @@
+services:
+    # Twig extension
+    rk_eventphotos_module.twig_extension:
+        class: RK\EventPhotosModule\Twig\TwigExtension
+        arguments:
+            - "@translator.default"
+            - "@zikula_extensions_module.api.variable"
+            - "@rk_eventphotos_module.entity_display_helper"
+            - "@rk_eventphotos_module.workflow_helper"
+            - "@rk_eventphotos_module.listentries_helper"
+        public: false
+        tags:
+            - { name: twig.extension }

@@ -1,0 +1,5 @@
+rkeventphotosmodule:
+    # define routing support for these controllers
+    resource: "@RKEventPhotosModule/Controller"
+    # enable support for defining routes by annotations
+    type: annotation

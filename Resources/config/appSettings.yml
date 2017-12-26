@@ -1,0 +1,5 @@
+services:
+    rk_eventphotos_module.app_settings:
+        class: RK\EventPhotosModule\AppSettings
+        arguments:
+            - "@zikula_extensions_module.api.variable"

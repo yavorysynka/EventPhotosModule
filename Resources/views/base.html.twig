@@ -1,0 +1,36 @@
+{# purpose of this template: general base layout #}
+{% block header %}
+	{{ pageAddAsset('javascript', asset('../modules/RK/EventPhotosModule/vendor/fancybox/dist/jquery.fancybox.min.js')) }}
+	{{ pageAddAsset('stylesheet', asset('../modules/RK/EventPhotosModule/vendor/fancybox/dist/jquery.fancybox.min.css')) }}
+	{{ pageAddAsset('javascript', asset('../modules/RK/EventPhotosModule/Resources/public/js/RKFineArtPhotographerModule.fancyBox.js')) }}
+	{{ pageAddAsset('javascript', asset('../modules/RK/EventPhotosModule/Resources/public/js/RKFineArtPhotographerModule.flexImage.js')) }}
+{% endblock %}
+
+{% block appTitle %}
+    {{ moduleHeader('user', '', '', false, true, false, true) }}
+{% endblock %}
+
+{% block titleArea %}
+    <h2>{% block title %}{% endblock %}</h2>
+{% endblock %}
+{{ pageSetVar('title', block('pageTitle')|default(block('title'))) }}
+
+{{ showflashes() }}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+    <p class="text-center">
+        Powered by <a href="https://modulestudio.de" title="Get the MOST out of Zikula!">ModuleStudio 1.3.0</a>
+    </p>
+    {{ pageAddAsset('stylesheet', zasset('@RKEventPhotosModule:css/custom.css')) }}
+    {{ pageAddAsset('stylesheet', asset('jquery-ui/themes/base/jquery-ui.min.css')) }}
+    {{ pageAddAsset('stylesheet', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.css')) }}
+    {{ pageAddAsset('javascript', asset('jquery-ui/jquery-ui.min.js')) }}
+    {{ pageAddAsset('javascript', asset('bootstrap-jqueryui/bootstrap-jqueryui.min.js')) }}
+    {{ pageAddAsset('javascript', asset('magnific-popup/jquery.magnific-popup.min.js')) }}
+    {{ pageAddAsset('stylesheet', asset('magnific-popup/magnific-popup.css')) }}
+    {{ pageAddAsset('javascript', zasset('@RKEventPhotosModule:js/RKEventPhotosModule.js')) }}
+	{{ pageAddAsset('javascript', asset('../modules/RK/EventPhotosModule/vendor/fleximage/jquery.flex-images.js')) }}
+	{{ pageAddAsset('stylesheet', asset('../modules/RK/EventPhotosModule/vendor/fleximage/jquery.flex-images.css')) }}
+	{% endblock %}
