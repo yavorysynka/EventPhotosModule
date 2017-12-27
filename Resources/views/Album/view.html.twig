@@ -23,13 +23,16 @@
 		{% for album in items %}
 		<div class="col-sm-3">
 			<div class="panel panel-primary">
+				<a class="panel-primary white" href="{{ path('rkeventphotosmodule_album_' ~ routeArea ~ 'display', {'id': album.getId()}) }}">
 				<div class="panel-heading height80">
 					
-						<a class="white" href="{{ path('rkeventphotosmodule_album_' ~ routeArea ~ 'display', {'id': album.getId()}) }}">{% spaceless %}
-							{{ album|rkeventphotosmodule_formattedTitle }}
-						  {% endspaceless %}</a>
+						
+						{% spaceless %}
+							<h5>{{ album|rkeventphotosmodule_formattedTitle }}</h5>
+						  {% endspaceless %}
 					
 				</div>
+				</a>
 				<div class="panel-body height180">
 					{{ album.albumDescription|raw }}
 					

@@ -1,9 +1,6 @@
 /* this file is intended for custom styles */
 
-.white {
-	color:#ffffff;
-		
-}
+
 a.white:hover {
 	text-decoration: underline;
 	color:#ffffff;
