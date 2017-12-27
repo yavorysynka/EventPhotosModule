@@ -2,39 +2,44 @@
 {% set baseTemplate = app.request.query.getBoolean('raw', false) ? 'raw' : 'base' %}
 {% extends 'RKEventPhotosModule::' ~ baseTemplate ~ '.html.twig' %}
 
-{% block appTitle %}
-    
-{% endblock %}
+{% block appTitle %}{% endblock %}
 
 {% block pageTitle %}{{ album|rkeventphotosmodule_formattedTitle|default(__('Album')) }}{% endblock %}
-{% block title %}
-    {% set templateTitle = album|rkeventphotosmodule_formattedTitle|default(__('Album')) %}
-    {{ templateTitle|notifyFilters('rkeventphotosmodule.filter_hooks.albums.filter')|safeHtml }}{% if routeArea == 'admin' %} <small>({{ album.workflowState|rkeventphotosmodule_objectState(false)|lower }})</small>{% endif %}
-{% endblock %}
+{% block title %}{% endblock %}
 {% block content %}
     {% set isQuickView = app.request.query.getBoolean('raw', false) %}
     <div class="rkeventphotosmodule-album rkeventphotosmodule-display">
-    <div class="row">
-        <div class="col-sm-12">
+		<div class="row">
+			<div class="col-sm-12">
 
-    {% set itemActions = knp_menu_get('RKEventPhotosModule:ItemActionsMenu:menu', [], {entity: album, area: routeArea, context: 'display'}) %}
-    <div class="btn-group btn-group-sm item-actions" role="group" aria-label="{{ __('Actions') }}">
-        {{ knp_menu_render(itemActions, {template: 'ZikulaMenuModule:Override:bootstrap_fontawesome.html.twig'}) }}
-    </div>
-	</div>
-	</div>
+				{% set itemActions = knp_menu_get('RKEventPhotosModule:ItemActionsMenu:menu', [], {entity: album, area: routeArea, context: 'display'}) %}
+				<div class="btn-group btn-group-sm item-actions" role="group" aria-label="{{ __('Actions') }}">
+					{{ knp_menu_render(itemActions, {template: 'ZikulaMenuModule:Override:bootstrap_fontawesome.html.twig'}) }}
+				</div>
+					
+
+			</div>
+		</div>
 	<div class="row">
         <div class="col-sm-12">
 	
 	    
-		<div class="panel panel-default">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				{% set templateTitle = album|rkeventphotosmodule_formattedTitle|default(__('Album')) %}
+				<h2>{# templateTitle|notifyFilters('rkeventphotosmodule.filter_hooks.albums.filter')|safeHtml #}
+					{{ album.albumTitle }} {{ __('on') }} {{ album.albumDate|localizeddate('medium', 'none') }} 
+				</h2>
+			</div>
             {% if album.albumDescription is not empty %}
-			<div class="panel-body">{{ album.albumDescription|safeHtml }}</div>
+			<div class="panel-body">
+			<p>{{ album.albumDescription|safeHtml }}<p>
+				
+			</div>
 			{% endif %}
-			<div class="col-sm-6">
-			<div class="panel-footer col-sm-12">
-				<div class="col-sm-6">
-				{% if hookAssignments|length > 0 %}
+
+			<div class="panel-footer">
+					{% if hookAssignments|length > 0 %}
 					<p>{{ __('This album is assigned to the following data objects:') }}</p>
 					<ul>
 					{% for assignment in hookAssignments %}
@@ -44,23 +49,33 @@
 				{% else %}
 					<p>{{ __('This album is not assigned to any data objects yet.') }}</p>
 				{% endif %}
-				</div>
-			
-				<div class="col-sm-6">
 					
 					{% if featureActivationHelper.isEnabled(constant('RK\\EventPhotosModule\\Helper\\FeatureActivationHelper::CATEGORIES'), 'album') %}
 					
 					{% if album.categories is defined %}
-					<p>{{ __('Categories') }}: 
+					<p><strong>{{ __('Categories') }}: </strong>
 					{% for catMapping in album.categories %}
 						{{ catMapping.category.display_name[app.request.locale]|default(catMapping.category.name) }}
 					{% endfor %}
 					</p>
 					{% endif %}
-				</div>	
-			</div>
-			</div>
-			<div class="col-sm-6">{{ include('@RKEventPhotosModule/Helper/includeStandardFieldsDisplay.html.twig', {obj: album}) }}</div>
+					
+					    {% if album.createdBy|default and album.createdBy.getUid() > 0 %}
+							{% set profileLink = album.createdBy.getUid()|profileLinkByUserId() %}
+							<dd class="avatar">{{ userAvatar(album.createdBy.getUid(), {rating: 'g'}) }}</dd>
+							<dd>
+								{{ __f('Created by %user on %date', {'%user': profileLink, '%date': album.createdDate|localizeddate('medium', 'short')})|raw }}
+								{% if currentUser.loggedIn %}
+									{% set sendMessageUrl = album.createdBy.getUid()|messageSendLink(urlOnly=true) %}
+									{% if sendMessageUrl != '#' %}
+										<a href="{{ sendMessageUrl }}" title="{{ __f('Send private message to %userName%', {'%userName%': album.createdBy.getUname()}) }}"><i class="fa fa-envelope-o"></i></a>
+									{% endif %}
+								{% endif %}
+							</dd>
+						{% endif %}
+			</div>	
+
+			
         </div>
 		{% endif %}
 		<div class="row">

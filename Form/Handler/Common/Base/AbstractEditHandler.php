@@ -345,10 +345,9 @@ abstract class AbstractEditHandler
             $this->returnTo = $this->request->getSession()->get($refererSessionVar);
         }
         // store current uri for repeated creations
-        $this->repeatReturnUrl = $this->request->getSchemeAndHttpHost() . $this->request->getBasePath() . $this->request->getPathInfo();
-    
+        $this->repeatReturnUrl = $this->request->getUri();
+
         $this->permissionComponent = 'RKEventPhotosModule:' . $this->objectTypeCapital . ':';
-    
         $this->idField = $this->entityFactory->getIdField($this->objectType);
     
         // retrieve identifier of the object we wish to edit

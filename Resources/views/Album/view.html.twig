@@ -26,9 +26,18 @@
 				<a class="panel-primary white" href="{{ path('rkeventphotosmodule_album_' ~ routeArea ~ 'display', {'id': album.getId()}) }}">
 				<div class="panel-heading height80">
 					
-						
-						{% spaceless %}
-							<h5>{{ album|rkeventphotosmodule_formattedTitle }}</h5>
+							{% spaceless %}
+							<p>{{ album.albumDate|localizeddate('medium', 'none') }}
+							{% if album.createdBy|default and album.createdBy.getUid() > 0 %}
+							{% set profileName = album.createdBy.getAttributeValue('zpmpp:realname') %}
+							/
+							{{ profileName }}
+							{%endif%}							
+							</p>
+							<h5><strong>{{ album.albumTitle }} </strong> 
+
+							
+							</h5>
 						  {% endspaceless %}
 					
 				</div>
