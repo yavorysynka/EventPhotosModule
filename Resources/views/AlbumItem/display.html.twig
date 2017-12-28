@@ -36,6 +36,14 @@
         {% if albumItem.copyright is not empty %}
             <dt>{{ __('Copyright') }}</dt>
             <dd>{{ albumItem.copyright }}</dd>
+			{%else%}
+			
+			{% if albumItem.createdBy|default and albumItem.createdBy.getUid() > 0 %}
+			<dt>{{ __('Copyright') }}</dt>
+        
+			{% set profileLink = albumItem.createdBy.getUid()|profileLinkByUserId() %}
+			<dd>{{ profileLink|raw }}</dd>
+			{% endif %}
         {% endif %}
         {% if albumItem.imageTitle is not empty %}
             <dt>{{ __('Image title') }}</dt>
