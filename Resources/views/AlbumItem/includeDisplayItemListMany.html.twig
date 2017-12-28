@@ -21,25 +21,32 @@
 
 <div id="rk-album" class="flex-images">
 {% for item in items %}
-
-
-
-
-{% if item.image is not empty and item.imageMeta.isImage %}
-
-{% set dataCaption = '' %}
-{% set albumItemUrl = path('rkeventphotosmodule_albumitem_' ~ routeArea ~ 'display', {'id': item.getId()}) %}
-{% if item.copyright is not empty %}
-	{% set dataCaption = 'Copyright: ' ~ item.copyright ~ '&lt;br /&gt;' %}
-{%endif%}
-{% set dataCaption = dataCaption ~ item.imageTitle ~ '&lt;br /&gt;' ~ item.imageDescription ~ '&lt;br /&gt; Mehr: &lt;a href=&quot;' ~ albumItemUrl ~ '&quot;&gt;Detail&lt;/a&gt;' %}
-{% set myImageWidth = myRowHeight * item.imageMeta.width / item.imageMeta.height %}
-<a href="{{ item.imageUrl }}" data-fancybox="gallery" data-caption="{{dataCaption|raw}}"  >  
-    <div class="item" data-w="{{myImageWidth}}" data-h="{{myRowHeight}}">
-	<img src="{{ item.image.getPathname()|imagine_filter('zkroot', myThumbOptions) }}" alt="{{ item|rkeventphotosmodule_formattedTitle|e('html_attr') }}"  />
-	</div>
-</a>
-{% endif %}
+	{% if item.image is not empty and item.imageMeta.isImage %}
+		{% set dataCaption = '' %}
+		{% set albumItemUrl = path('rkeventphotosmodule_albumitem_' ~ routeArea ~ 'display', {'id': item.getId()}) %}
+		{% if item.copyright is not empty %}
+			{% set dataCaption = __('Copyright') ~ ': ' ~ item.copyright ~ '&lt;br /&gt;' %}
+		{% else %}
+		{% if album.createdBy|default and album.createdBy.getUid() > 0 %}
+			{% set profileLink = album.createdBy.getUid()|profileLinkByUserId() %}
+			{% set profileLink = profileLink|rkeventphotosmodule_htmlentitiesFilter %}
+			{% set dataCaption =  __('Copyright') ~ ': ' ~ profileLink ~ '&lt;br /&gt;' %}
+		{% endif %}			
+		{%endif%}
+		{% if item.imageTitle is not empty%}
+			{% set dataCaption = dataCaption ~ item.imageTitle ~ '&lt;br /&gt;' %}
+		{%endif%}
+		{% if item.imageDescription is not empty%}
+			{% set dataCaption = dataCaption ~ item.imageDescription ~ '&lt;br /&gt;' %}
+		{%endif%}		
+		{% set dataCaption = dataCaption ~ '&lt;a href=&quot;' ~ albumItemUrl ~ '&quot;&gt;' ~ __('more image details') ~ '&lt;/a&gt;' %}
+		{% set myImageWidth = myRowHeight * item.imageMeta.width / item.imageMeta.height %}
+		<a href="{{ item.imageUrl }}" data-fancybox="gallery" data-caption="{{dataCaption|raw}}"  >  
+			<div class="item" data-w="{{myImageWidth}}" data-h="{{myRowHeight}}">
+			<img src="{{ item.image.getPathname()|imagine_filter('zkroot', myThumbOptions) }}" alt="{{ item|rkeventphotosmodule_formattedTitle|e('html_attr') }}"  />
+			</div>
+		</a>
+	{% endif %}
 {% endfor %}
 </div>
 

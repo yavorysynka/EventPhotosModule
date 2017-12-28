@@ -20,4 +20,22 @@ use RK\EventPhotosModule\Twig\Base\AbstractTwigExtension;
 class TwigExtension extends AbstractTwigExtension
 {
     // feel free to add your own Twig extension methods here
+public function getFilters()
+    {
+        $filters = parent::getFilters();
+
+        $filters[] = new \Twig_SimpleFilter('rkeventphotosmodule_htmlentitiesFilter', [$this, 'htmlentitiesFilter'], ['is_safe' => ['html']]);
+
+        return $filters;
+    }
+
+public function htmlentitiesFilter($string)
+    {
+        // verändere $string
+		$string = htmlentities($string);
+
+        return $string;
+    }
+
+	 
 }
