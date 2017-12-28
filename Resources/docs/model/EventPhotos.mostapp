@@ -18,8 +18,8 @@ application "EventPhotos" targets ZK15 {
     generateIcsTemplates false
     separateAdminTemplates true
     displayActionsStyle BUTTON_GROUP
-    skipFiles "README.md"
-    markFiles "Helper/EntityDisplayHelper.php,\r\nResources/views/base.html.twig,\r\nResources/views/AlbumItem/includeDisplayItemListMany.html.twig,\r\nResources/views/Album/display.html.twig,\r\nResources/views/Album/view.html.twig,\r\nResources/views/Album/viewQuickNav.html.twig,\r\nEntity/Repository/AlbumRepository.php, \r\nFineArtPhotographerModuleInstaller.php,\r\n.gitignore"
+    skipFiles "README.md,\r\nCHANGELOCK.md,\r\nResources/public/css/custom.css"
+    markFiles "Helper/EntityDisplayHelper.php,\r\nResources/views/base.html.twig,\r\nResources/views/AlbumItem/includeDisplayItemListMany.html.twig,\r\nResources/views/AlbumItem/display.html.twig,\r\nResources/views/Album/display.html.twig,\r\nResources/views/Album/view.html.twig,\r\nResources/views/Album/viewQuickNav.html.twig,\r\nEntity/Repository/AlbumRepository.php, \r\nEventPhotosModuleInstaller.php,\r\n.gitignore,\r\nTwig/TwigExtension.php"
     entities {
         entity "album" leading categorisable {
             documentation "Please add your photos only to your own album."
@@ -32,15 +32,17 @@ application "EventPhotos" targets ZK15 {
             fields {
                 string "albumTitle" translatable {
                     documentation "Choose a title for your album. The event name seem to be a good choice. Date and creator name will be automatically included."
+                length 25
                 },
                 datetime "albumDate" {
-                    documentation "The date will be included in the headline"
+                    documentation "The date will be included in the headline and will be used for sorting."
                     components DATE
                 },
                 text "albumDescription" translatable {
                     documentation "This description is used to give a short introduction about the event. It is not mandatory."
                     mandatory false
                     displayType DISPLAY
+                length 200
                 }
             }
             actions {
@@ -59,23 +61,25 @@ application "EventPhotos" targets ZK15 {
             ownerPermission true
             fields {
                 upload "image" {
-                    documentation "The image must fit to the maximum dimension. If shrinking is enabled it will be shrinked automatically."
+                    documentation "There is no maximum for the image size. If images are to big a memory error might occur. The administrator can switch on automatic shrinking."
                 maxWidth 0
                     maxHeight 0
                 },
                 string "copyright" {
-                    documentation "You may want to label your image with your copyright."
+                    documentation "If blank the uploading user will get the copyright. If you want to overwrite please fill in this."
                     mandatory false
                 }
             ,
                 string "imageTitle" translatable {
                     documentation "sometimes it is nice to give the image a title"
                     mandatory false
+                length 25
                 }
             ,
                 text "imageDescription" translatable {
-                    documentation "You may want to tell a bit about the shooting and the parameters."
+                    documentation "You may want to tell a bit about the shooting. The exif parameters are visible in detail view of the image."
                     mandatory false
+                length 200
                 }
             }
             actions {

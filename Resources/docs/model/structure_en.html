@@ -203,7 +203,7 @@
                         <li>the current workflow state </li>
                         <li>This field is not unique and allows no null values.</li>
                         <li>The list is represented by a single-valued dropdown list.</li>
-                        <li>Available entries: <ul><li>Initial (initial)</li><li>Deferred (deferred)</li><li>Approved (approved)</li><li>Deleted (deleted)</li></ul></li>
+                        <li>Available entries: <ul><li>Initial (initial)</li><li>Deferred (deferred)</li><li>Approved (approved)</li><li>Trashed (trashed)</li><li>Deleted (deleted)</li></ul></li>
                     </ul>
                 </td>
             </tr>
@@ -215,7 +215,7 @@
                 <td headers="hEntityAlbumFieldAlbumTitle hEntityAlbumFieldDisplayType">ALL</td>
                 <td headers="hEntityAlbumFieldAlbumTitle hEntityAlbumFieldConstraints">
                     <ul>
-                        <li>Has a length of 255 chars.</li>
+                        <li>Has a length of 25 chars.</li>
                     </ul>
                 </td>
                 <td headers="hEntityAlbumFieldAlbumTitle hEntityAlbumFieldRemarks">
@@ -238,7 +238,7 @@
                 </td>
                 <td headers="hEntityAlbumFieldAlbumDate hEntityAlbumFieldRemarks">
                     <ul>
-                        <li>The date will be included in the headline </li>
+                        <li>The date will be included in the headline and will be used for sorting. </li>
                         <li>This field is not unique and allows no null values.</li>
                     </ul>
                 </td>
@@ -251,7 +251,7 @@
                 <td headers="hEntityAlbumFieldAlbumDescription hEntityAlbumFieldDisplayType">DISPLAY</td>
                 <td headers="hEntityAlbumFieldAlbumDescription hEntityAlbumFieldConstraints">
                     <ul>
-                        <li>Has a length of 2000 chars.</li>
+                        <li>Has a length of 200 chars.</li>
                     </ul>
                 </td>
                 <td headers="hEntityAlbumFieldAlbumDescription hEntityAlbumFieldRemarks">
@@ -586,7 +586,7 @@
                         <li>the current workflow state </li>
                         <li>This field is not unique and allows no null values.</li>
                         <li>The list is represented by a single-valued dropdown list.</li>
-                        <li>Available entries: <ul><li>Initial (initial)</li><li>Deferred (deferred)</li><li>Approved (approved)</li><li>Deleted (deleted)</li></ul></li>
+                        <li>Available entries: <ul><li>Initial (initial)</li><li>Deferred (deferred)</li><li>Approved (approved)</li><li>Trashed (trashed)</li><li>Deleted (deleted)</li></ul></li>
                     </ul>
                 </td>
             </tr>
@@ -605,7 +605,7 @@
                 </td>
                 <td headers="hEntityAlbumItemFieldImage hEntityAlbumItemFieldRemarks">
                     <ul>
-                        <li>The image must fit to the maximum dimension. If shrinking is enabled it will be shrinked automatically. </li>
+                        <li>There is no maximum for the image size. If images are to big a memory error might occur. The administrator can switch on automatic shrinking. </li>
                         <li>This field is not unique and allows no null values.</li>
                         <li>Uploaded files are stored in the "image" subfolder and keep their original file name which is extended by a counter if needed..</li>
                     </ul>
@@ -624,7 +624,7 @@
                 </td>
                 <td headers="hEntityAlbumItemFieldCopyright hEntityAlbumItemFieldRemarks">
                     <ul>
-                        <li>You may want to label your image with your copyright. </li>
+                        <li>If blank the uploading user will get the copyright. If you want to overwrite please fill in this. </li>
                         <li>This field is not unique and allows no null values.</li>
                     </ul>
                 </td>
@@ -637,7 +637,7 @@
                 <td headers="hEntityAlbumItemFieldImageTitle hEntityAlbumItemFieldDisplayType">ALL</td>
                 <td headers="hEntityAlbumItemFieldImageTitle hEntityAlbumItemFieldConstraints">
                     <ul>
-                        <li>Has a length of 255 chars.</li>
+                        <li>Has a length of 25 chars.</li>
                     </ul>
                 </td>
                 <td headers="hEntityAlbumItemFieldImageTitle hEntityAlbumItemFieldRemarks">
@@ -656,7 +656,7 @@
                 <td headers="hEntityAlbumItemFieldImageDescription hEntityAlbumItemFieldDisplayType">ALL</td>
                 <td headers="hEntityAlbumItemFieldImageDescription hEntityAlbumItemFieldConstraints">
                     <ul>
-                        <li>Has a length of 2000 chars.</li>
+                        <li>Has a length of 200 chars.</li>
                     </ul>
                 </td>
                 <td headers="hEntityAlbumItemFieldImageDescription hEntityAlbumItemFieldRemarks">

@@ -203,7 +203,7 @@
                         <li>the current workflow state </li>
                         <li>Dieses Feld ist nicht eindeutig und erlaubt keine Null-Werte.</li>
                         <li>Die Liste wird durch eine einwertige Dropdownliste repräsentiert.</li>
-                        <li>Verfügbare Einträge: <ul><li>Initial (initial)</li><li>Deferred (deferred)</li><li>Approved (approved)</li><li>Deleted (deleted)</li></ul></li>
+                        <li>Verfügbare Einträge: <ul><li>Initial (initial)</li><li>Deferred (deferred)</li><li>Approved (approved)</li><li>Trashed (trashed)</li><li>Deleted (deleted)</li></ul></li>
                     </ul>
                 </td>
             </tr>
@@ -215,7 +215,7 @@
                 <td headers="hEntityAlbumFieldAlbumTitle hEntityAlbumFieldDisplayType">ALL</td>
                 <td headers="hEntityAlbumFieldAlbumTitle hEntityAlbumFieldConstraints">
                     <ul>
-                        <li>Hat eine Länge von 255 Zeichen.</li>
+                        <li>Hat eine Länge von 25 Zeichen.</li>
                     </ul>
                 </td>
                 <td headers="hEntityAlbumFieldAlbumTitle hEntityAlbumFieldRemarks">
@@ -238,7 +238,7 @@
                 </td>
                 <td headers="hEntityAlbumFieldAlbumDate hEntityAlbumFieldRemarks">
                     <ul>
-                        <li>The date will be included in the headline </li>
+                        <li>The date will be included in the headline and will be used for sorting. </li>
                         <li>Dieses Feld ist nicht eindeutig und erlaubt keine Null-Werte.</li>
                     </ul>
                 </td>
@@ -251,7 +251,7 @@
                 <td headers="hEntityAlbumFieldAlbumDescription hEntityAlbumFieldDisplayType">DISPLAY</td>
                 <td headers="hEntityAlbumFieldAlbumDescription hEntityAlbumFieldConstraints">
                     <ul>
-                        <li>Hat eine Länge von 2000 Zeichen.</li>
+                        <li>Hat eine Länge von 200 Zeichen.</li>
                     </ul>
                 </td>
                 <td headers="hEntityAlbumFieldAlbumDescription hEntityAlbumFieldRemarks">
@@ -586,7 +586,7 @@
                         <li>the current workflow state </li>
                         <li>Dieses Feld ist nicht eindeutig und erlaubt keine Null-Werte.</li>
                         <li>Die Liste wird durch eine einwertige Dropdownliste repräsentiert.</li>
-                        <li>Verfügbare Einträge: <ul><li>Initial (initial)</li><li>Deferred (deferred)</li><li>Approved (approved)</li><li>Deleted (deleted)</li></ul></li>
+                        <li>Verfügbare Einträge: <ul><li>Initial (initial)</li><li>Deferred (deferred)</li><li>Approved (approved)</li><li>Trashed (trashed)</li><li>Deleted (deleted)</li></ul></li>
                     </ul>
                 </td>
             </tr>
@@ -605,7 +605,7 @@
                 </td>
                 <td headers="hEntityAlbumItemFieldImage hEntityAlbumItemFieldRemarks">
                     <ul>
-                        <li>The image must fit to the maximum dimension. If shrinking is enabled it will be shrinked automatically. </li>
+                        <li>There is no maximum for the image size. If images are to big a memory error might occur. The administrator can switch on automatic shrinking. </li>
                         <li>Dieses Feld ist nicht eindeutig und erlaubt keine Null-Werte.</li>
                         <li>Die hochgeladenen Dateien werden im Unterordner "image" gespeichert und behalten ihren originalen Dateinamen, der bei Bedarf um einen Zähler erweitert wird..</li>
                     </ul>
@@ -624,7 +624,7 @@
                 </td>
                 <td headers="hEntityAlbumItemFieldCopyright hEntityAlbumItemFieldRemarks">
                     <ul>
-                        <li>You may want to label your image with your copyright. </li>
+                        <li>If blank the uploading user will get the copyright. If you want to overwrite please fill in this. </li>
                         <li>Dieses Feld ist nicht eindeutig und erlaubt keine Null-Werte.</li>
                     </ul>
                 </td>
@@ -637,7 +637,7 @@
                 <td headers="hEntityAlbumItemFieldImageTitle hEntityAlbumItemFieldDisplayType">ALL</td>
                 <td headers="hEntityAlbumItemFieldImageTitle hEntityAlbumItemFieldConstraints">
                     <ul>
-                        <li>Hat eine Länge von 255 Zeichen.</li>
+                        <li>Hat eine Länge von 25 Zeichen.</li>
                     </ul>
                 </td>
                 <td headers="hEntityAlbumItemFieldImageTitle hEntityAlbumItemFieldRemarks">
@@ -656,7 +656,7 @@
                 <td headers="hEntityAlbumItemFieldImageDescription hEntityAlbumItemFieldDisplayType">ALL</td>
                 <td headers="hEntityAlbumItemFieldImageDescription hEntityAlbumItemFieldConstraints">
                     <ul>
-                        <li>Hat eine Länge von 2000 Zeichen.</li>
+                        <li>Hat eine Länge von 200 Zeichen.</li>
                     </ul>
                 </td>
                 <td headers="hEntityAlbumItemFieldImageDescription hEntityAlbumItemFieldRemarks">
