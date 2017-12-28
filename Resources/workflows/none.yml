@@ -13,8 +13,15 @@ workflow:
                 - initial
                 - deferred
                 - approved
+                - trashed
                 - deleted
             transitions:
+                recoverdeferred:
+                    from: trashed
+                    to: deferred
+                recoverapproved:
+                    from: trashed
+                    to: approved
                 defer:
                     from: initial
                     to: deferred
@@ -27,6 +34,12 @@ workflow:
                 update:
                     from: deferred
                     to: deferred
+                trashdeferred:
+                    from: deferred
+                    to: trashed
                 delete:
-                    from: [deferred, approved]
+                    from: [deferred, approved, trashed]
                     to: deleted
+                trashapproved:
+                    from: approved
+                    to: trashed

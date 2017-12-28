@@ -71,7 +71,7 @@ abstract class AbstractAlbumItemEntity extends EntityAccess implements Translata
     protected $imageMeta = [];
     
     /**
-     * The image must fit to the maximum dimension. If shrinking is enabled it will be shrinked automatically.
+     * There is no maximum for the image size. If images are to big a memory error might occur. The administrator can switch on automatic shrinking.
      *
      * @ORM\Column(length=255)
      * @Assert\NotBlank()
@@ -94,7 +94,7 @@ abstract class AbstractAlbumItemEntity extends EntityAccess implements Translata
     protected $imageUrl = '';
     
     /**
-     * You may want to label your image with your copyright.
+     * If blank the uploading user will get the copyright. If you want to overwrite please fill in this.
      *
      * @ORM\Column(length=255)
      * @Assert\NotNull()
@@ -107,20 +107,20 @@ abstract class AbstractAlbumItemEntity extends EntityAccess implements Translata
      * sometimes it is nice to give the image a title
      *
      * @Gedmo\Translatable
-     * @ORM\Column(length=255)
+     * @ORM\Column(length=25)
      * @Assert\NotNull()
-     * @Assert\Length(min="0", max="255")
+     * @Assert\Length(min="0", max="25")
      * @var string $imageTitle
      */
     protected $imageTitle = '';
     
     /**
-     * You may want to tell a bit about the shooting and the parameters.
+     * You may want to tell a bit about the shooting. The exif parameters are visible in detail view of the image.
      *
      * @Gedmo\Translatable
-     * @ORM\Column(type="text", length=2000)
+     * @ORM\Column(type="text", length=200)
      * @Assert\NotNull()
-     * @Assert\Length(min="0", max="2000")
+     * @Assert\Length(min="0", max="200")
      * @var text $imageDescription
      */
     protected $imageDescription = '';

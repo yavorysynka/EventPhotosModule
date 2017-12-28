@@ -346,7 +346,7 @@ abstract class AbstractEditHandler
         }
         // store current uri for repeated creations
         $this->repeatReturnUrl = $this->request->getUri();
-
+    
         $this->permissionComponent = 'RKEventPhotosModule:' . $this->objectTypeCapital . ':';
         $this->idField = $this->entityFactory->getIdField($this->objectType);
     

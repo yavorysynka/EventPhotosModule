@@ -152,7 +152,7 @@ abstract class AbstractAlbumType extends AbstractType
             'help' => $this->__('Choose a title for your album. The event name seem to be a good choice. Date and creator name will be automatically included.'),
             'empty_data' => '',
             'attr' => [
-                'maxlength' => 255,
+                'maxlength' => 25,
                 'class' => '',
                 'title' => $this->__('Enter the album title of the album')
             ],
@@ -165,10 +165,10 @@ abstract class AbstractAlbumType extends AbstractType
                 'class' => 'tooltips',
                 'title' => $this->__('This description is used to give a short introduction about the event. It is not mandatory.')
             ],
-            'help' => [$this->__('This description is used to give a short introduction about the event. It is not mandatory.'), $this->__f('Note: this value must not exceed %amount% characters.', ['%amount%' => 2000])],
+            'help' => [$this->__('This description is used to give a short introduction about the event. It is not mandatory.'), $this->__f('Note: this value must not exceed %amount% characters.', ['%amount%' => 200])],
             'empty_data' => '',
             'attr' => [
-                'maxlength' => 2000,
+                'maxlength' => 200,
                 'class' => '',
                 'title' => $this->__('Enter the album description of the album')
             ],
@@ -198,9 +198,9 @@ abstract class AbstractAlbumType extends AbstractType
             'label' => $this->__('Album date') . ':',
             'label_attr' => [
                 'class' => 'tooltips',
-                'title' => $this->__('The date will be included in the headline')
+                'title' => $this->__('The date will be included in the headline and will be used for sorting.')
             ],
-            'help' => $this->__('The date will be included in the headline'),
+            'help' => $this->__('The date will be included in the headline and will be used for sorting.'),
             'attr' => [
                 'class' => '',
                 'title' => $this->__('Enter the album date of the album')

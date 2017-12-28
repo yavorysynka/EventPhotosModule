@@ -64,15 +64,15 @@ abstract class AbstractAlbumEntity extends EntityAccess implements Translatable
      * Choose a title for your album. The event name seem to be a good choice. Date and creator name will be automatically included.
      *
      * @Gedmo\Translatable
-     * @ORM\Column(length=255)
+     * @ORM\Column(length=25)
      * @Assert\NotBlank()
-     * @Assert\Length(min="0", max="255")
+     * @Assert\Length(min="0", max="25")
      * @var string $albumTitle
      */
     protected $albumTitle = '';
     
     /**
-     * The date will be included in the headline
+     * The date will be included in the headline and will be used for sorting.
      *
      * @ORM\Column(type="date")
      * @Assert\NotBlank()
@@ -85,9 +85,9 @@ abstract class AbstractAlbumEntity extends EntityAccess implements Translatable
      * This description is used to give a short introduction about the event. It is not mandatory.
      *
      * @Gedmo\Translatable
-     * @ORM\Column(type="text", length=2000)
+     * @ORM\Column(type="text", length=200)
      * @Assert\NotNull()
-     * @Assert\Length(min="0", max="2000")
+     * @Assert\Length(min="0", max="200")
      * @var text $albumDescription
      */
     protected $albumDescription = '';

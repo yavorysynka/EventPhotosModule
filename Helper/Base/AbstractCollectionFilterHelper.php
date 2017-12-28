@@ -328,8 +328,9 @@ abstract class AbstractCollectionFilterHelper
             // per default we show approved albums only
             $onlineStates = ['approved'];
             if ($showOnlyOwnEntries) {
-                // allow the owner to see his deferred albums
+                // allow the owner to see his albums
                 $onlineStates[] = 'deferred';
+                $onlineStates[] = 'trashed';
             }
             $qb->andWhere('tbl.workflowState IN (:onlineStates)')
                ->setParameter('onlineStates', $onlineStates);
@@ -367,8 +368,9 @@ abstract class AbstractCollectionFilterHelper
             // per default we show approved album items only
             $onlineStates = ['approved'];
             if ($showOnlyOwnEntries) {
-                // allow the owner to see his deferred album items
+                // allow the owner to see his album items
                 $onlineStates[] = 'deferred';
+                $onlineStates[] = 'trashed';
             }
             $qb->andWhere('tbl.workflowState IN (:onlineStates)')
                ->setParameter('onlineStates', $onlineStates);

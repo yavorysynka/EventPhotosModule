@@ -116,6 +116,11 @@ abstract class AbstractWorkflowHelper
              'ui' => 'success'
          ];
          $states[] = [
+             'value' => 'trashed',
+             'text' => $this->translator->__('Trashed'),
+             'ui' => 'danger'
+         ];
+         $states[] = [
              'value' => 'deleted',
              'text' => $this->translator->__('Deleted'),
              'ui' => 'danger'
@@ -193,13 +198,25 @@ abstract class AbstractWorkflowHelper
             case 'reject':
                 $title = $this->translator->__('Reject');
                 break;
+            case 'trash':
+                $title = $this->translator->__('Trash');
+                break;
+            case 'recover':
+                $title = $this->translator->__('Recover');
+                break;
             case 'delete':
                 $title = $this->translator->__('Delete');
                 break;
         }
     
-        if ($title == '' && substr($actionId, 0, 6) == 'update') {
-            $title = $this->translator->__('Update');
+        if ($title == '') {
+            if (substr($actionId, 0, 6) == 'update') {
+                $title = $this->translator->__('Update');
+            } elseif (substr($actionId, 0, 5) == 'trash') {
+                $title = $this->translator->__('Trash');
+            } elseif (substr($actionId, 0, 7) == 'recover') {
+                $title = $this->translator->__('Recover');
+        	}
         }
     
         return $title;
@@ -223,6 +240,12 @@ abstract class AbstractWorkflowHelper
                 $buttonClass = 'success';
                 break;
             case 'reject':
+                $buttonClass = '';
+                break;
+            case 'trash':
+                $buttonClass = '';
+                break;
+            case 'recover':
                 $buttonClass = '';
                 break;
             case 'delete':

@@ -174,7 +174,7 @@ abstract class AbstractAlbumItemType extends AbstractType
             'help' => $this->__('sometimes it is nice to give the image a title'),
             'empty_data' => '',
             'attr' => [
-                'maxlength' => 255,
+                'maxlength' => 25,
                 'class' => '',
                 'title' => $this->__('Enter the image title of the album item')
             ],
@@ -185,12 +185,12 @@ abstract class AbstractAlbumItemType extends AbstractType
             'label' => $this->__('Image description') . ':',
             'label_attr' => [
                 'class' => 'tooltips',
-                'title' => $this->__('You may want to tell a bit about the shooting and the parameters.')
+                'title' => $this->__('You may want to tell a bit about the shooting. The exif parameters are visible in detail view of the image.')
             ],
-            'help' => [$this->__('You may want to tell a bit about the shooting and the parameters.'), $this->__f('Note: this value must not exceed %amount% characters.', ['%amount%' => 2000])],
+            'help' => [$this->__('You may want to tell a bit about the shooting. The exif parameters are visible in detail view of the image.'), $this->__f('Note: this value must not exceed %amount% characters.', ['%amount%' => 200])],
             'empty_data' => '',
             'attr' => [
-                'maxlength' => 2000,
+                'maxlength' => 200,
                 'class' => '',
                 'title' => $this->__('Enter the image description of the album item')
             ],
@@ -220,9 +220,9 @@ abstract class AbstractAlbumItemType extends AbstractType
             'label' => $this->__('Image') . ':',
             'label_attr' => [
                 'class' => 'tooltips',
-                'title' => $this->__('The image must fit to the maximum dimension. If shrinking is enabled it will be shrinked automatically.')
+                'title' => $this->__('There is no maximum for the image size. If images are to big a memory error might occur. The administrator can switch on automatic shrinking.')
             ],
-            'help' => $this->__('The image must fit to the maximum dimension. If shrinking is enabled it will be shrinked automatically.'),
+            'help' => $this->__('There is no maximum for the image size. If images are to big a memory error might occur. The administrator can switch on automatic shrinking.'),
             'attr' => [
                 'class' => ' validate-upload',
                 'title' => $this->__('Enter the image of the album item')
@@ -237,9 +237,9 @@ abstract class AbstractAlbumItemType extends AbstractType
             'label' => $this->__('Copyright') . ':',
             'label_attr' => [
                 'class' => 'tooltips',
-                'title' => $this->__('You may want to label your image with your copyright.')
+                'title' => $this->__('If blank the uploading user will get the copyright. If you want to overwrite please fill in this.')
             ],
-            'help' => $this->__('You may want to label your image with your copyright.'),
+            'help' => $this->__('If blank the uploading user will get the copyright. If you want to overwrite please fill in this.'),
             'empty_data' => '',
             'attr' => [
                 'maxlength' => 255,
