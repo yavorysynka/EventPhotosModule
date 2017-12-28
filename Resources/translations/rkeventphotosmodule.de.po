@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Language-Team: \n"
-"MIME-Version: 1.0\n"
-"X-Generator: Poedit 2.0.4\n"
 "Last-Translator: Ralf Köster <ralf@familie-koester.de>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Team: \n"
 "Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "%albumDate%, %albumTitle%"
 msgstr "%albumDate%, %albumTitle%"
@@ -39,12 +39,6 @@ msgstr "5"
 msgid "50"
 msgstr "50"
 
-msgid "A direct feed showing the list of album items"
-msgstr "Eine direkter Feed zeigt die Liste der Bilder"
-
-msgid "A direct feed showing the list of albums"
-msgstr "Eine direkter Feed zeigt die Liste der Alben"
-
 msgid "Absolute url to the album"
 msgstr "Absolute Url zum Album"
 
@@ -69,10 +63,6 @@ msgstr "Anzahl Album Einträge pro Seite"
 #, fuzzy
 msgid "Album filter hooks subscriber"
 msgstr "Album-Filter-Haken-Abonnenten"
-
-#, fuzzy
-msgid "Album form aware provider"
-msgstr "Album Form bewusst Anbieter"
 
 #, fuzzy
 msgid "Album form aware subscriber"
@@ -309,11 +299,11 @@ msgid "Details"
 msgstr "Details"
 
 #, fuzzy
-msgid "Display list of RKFineArtPhotographerModule objects."
+msgid "Display list of RKEventPhotosModule objects."
 msgstr "Zeigt die Liste von RKFineArtPhotographerModule-Objekten."
 
 #, fuzzy
-msgid "Display or link a single RKFineArtPhotographerModule object."
+msgid "Display or link a single RKEventPhotosModule object."
 msgstr ""
 "Anzeigen oder ein einzelnes RKFineArtPhotographerModule-Objekt zu verknüpfen."
 
@@ -359,11 +349,8 @@ msgstr "Erledigt! Modul Konfiguration aktualisiert."
 msgid "Download"
 msgstr "Download"
 
-msgid "Dummy album choice"
-msgstr "Dummy-Album Auswahl"
-
-msgid "Dummy album text"
-msgstr "Dummy-Album Text"
+msgid "EXIF selection"
+msgstr "EXIF-Auswahl"
 
 msgid "Edit"
 msgstr "Bearbeiten"
@@ -435,6 +422,10 @@ msgstr "Geben Sie das Bild des Bilds"
 #, fuzzy
 msgid "Enter the image title of the album item"
 msgstr "Geben Sie den Bildtitel des Bilds"
+
+#, fuzzy
+msgid "Enter the row height."
+msgstr "Pixel für die reduziertebildhöhe."
 
 #, fuzzy
 msgid "Enter the shrink height"
@@ -515,6 +506,11 @@ msgstr "Fehler: ungültige Eingabe."
 msgid "Errors"
 msgstr "Fehler"
 
+#, fuzzy
+#| msgid "Fine art photographer Backend"
+msgid "Event photos Backend"
+msgstr "Fotografenmodul Backend"
+
 msgid "Example"
 msgstr "Beispiel"
 
@@ -526,12 +522,6 @@ msgstr "Filter ( Expertenoption )"
 
 msgid "Find %name%"
 msgstr "Finde %name%"
-
-msgid "Fine art photographer Backend"
-msgstr "Fotografenmodul Backend"
-
-msgid "Fine art photographer filter hooks provider"
-msgstr "Fotografenmodul Filter Hook Anbieter"
 
 msgid "Frontend"
 msgstr "Frontend"
@@ -554,6 +544,9 @@ msgstr "Hier können Sie Parameter für die Listenansichten konfigurieren."
 
 msgid "Here you can inspect and amend the existing workflows."
 msgstr "Hier können Sie die bestehenden überprüfen und ergänzen Workflows."
+
+msgid "Here you can manage all basic settings for this application."
+msgstr "Einstellungen für diese Anwendung"
 
 msgid "Hook assignments"
 msgstr "Zuordnungen"
@@ -611,12 +604,6 @@ msgstr "KB"
 
 msgid "Last update"
 msgstr "Letzte Aktualisierung"
-
-msgid "Latest album items"
-msgstr "Neuesten Bilder"
-
-msgid "Latest albums"
-msgstr "Neueste Alben"
 
 msgid "Link own album items on account page"
 msgstr "Eigene Bilder im Benutzerkonto anzeigen"
@@ -699,9 +686,6 @@ msgstr "Schnellansicht öffnen"
 msgid "Operation cancelled."
 msgstr "Vorgang abgelehnt."
 
-msgid "Option A"
-msgstr "Option A"
-
 msgid "Outbound"
 msgstr "abschneiden (outbound)"
 
@@ -723,14 +707,14 @@ msgstr "Vorschau"
 msgid "Quick navigation"
 msgstr "Schnellansicht"
 
-msgid "RKFineArtPhotographerModule detail view"
-msgstr "Fotografenmodul Detailansicht"
+msgid "RKEventPhotosModule detail view"
+msgstr "Eventfotomodul Detailansicht"
 
-msgid "RKFineArtPhotographerModule items"
-msgstr "Fotografenmodul Elemente"
+msgid "RKEventPhotosModule items"
+msgstr "Eventfotomodul Elemente"
 
-msgid "RKFineArtPhotographerModule list view"
-msgstr "Fotografenmodul-Listenansicht"
+msgid "RKEventPhotosModule list view"
+msgstr "Eventfotomodul -Listenansicht"
 
 msgid "Random"
 msgstr "Zufällig"
@@ -764,6 +748,9 @@ msgstr "Wiederverwendung für neues Album"
 
 msgid "Reuse for new album item"
 msgstr "Wiederverwendung für neues Bild"
+
+msgid "Row height"
+msgstr "Zeilenhöhe"
 
 msgid "Search"
 msgstr "Suchen"
@@ -837,6 +824,9 @@ msgstr "Sortierreihenfolge"
 msgid "Sorting"
 msgstr "Sortierung"
 
+msgid "Special album settings"
+msgstr "Spezial Albumeinstellungen"
+
 msgid "State"
 msgstr "Status"
 
@@ -875,11 +865,12 @@ msgid "The enable shrinking option"
 msgstr "Die Option zur Bildverkleinerung"
 
 msgid ""
-"The image will be shriked automatically right after the upload. The shrink "
-"size can be configured by the administrator."
+"The image must fit to the maximum dimension. If shrinking is enabled it will "
+"be shrinked automatically."
 msgstr ""
-"Direkt nach dem Upload wird das Bild automatisch verkleinert werden. Die "
-"Größe kann vom Administrator konfiguriert werden."
+"Das Bild wird automatisch verkleinert. Kommt eine Fehlermeldung, reicht der "
+"interne Speicher des Servers nicht zum verkleinern. In dem Fall bitte selber "
+"das Bild verkleinern und dann erneut hochladen."
 
 msgid "The link own album items on account page option"
 msgstr "Die Option zur Anzeige der eigenen Bilder im Benutzerkonto"
@@ -889,6 +880,11 @@ msgstr "Die Option zur Anzeige der eigenen Alben im Benutzerkonto"
 
 msgid "The maximum amount of items to be shown."
 msgstr "Die maximale Anzahl von Elementen, die angezeigt werden."
+
+#, fuzzy
+#| msgid "The maximum image height in pixels."
+msgid "The maximum height of a row in the image album."
+msgstr "Die maximale Bildhöhe in Pixel."
 
 msgid "The maximum image height in pixels."
 msgstr "Die maximale Bildhöhe in Pixel."
@@ -930,10 +926,6 @@ msgstr ""
 
 msgid "This function requires JavaScript activated!"
 msgstr "Diese Funktion verlangt aktiviertes Javascript!"
-
-#, fuzzy
-msgid "This is a dummy addition by a generated filter provider."
-msgstr "Dies ist ein Dummy-Ergänzung durch einen generierten Filter-Anbieter."
 
 msgid "This is an optional filter."
 msgstr "Dies ist ein optionaler Filter"
@@ -1011,11 +1003,17 @@ msgstr ""
 "Warnung! Das Upload-Verzeichnis \"%path%\" besteht, ist allerdings nicht vom "
 "Webserver beschreibbar."
 
-msgid ""
-"Welcome to the album item section of the Fine art photographer application."
+#, fuzzy
+#| msgid ""
+#| "Welcome to the album item section of the Fine art photographer "
+#| "application."
+msgid "Welcome to the album item section of the Event photos application."
 msgstr "Willkommen im Abschnitt Bild des Fotografenmoduls."
 
-msgid "Welcome to the album section of the Fine art photographer application."
+#, fuzzy
+#| msgid ""
+#| "Welcome to the album section of the Fine art photographer application."
+msgid "Welcome to the album section of the Event photos application."
 msgstr "Willkommen Sie in der Album-Sektion des Fotografenmoduls."
 
 msgid ""
@@ -1071,8 +1069,51 @@ msgstr "Bilder"
 msgid "albums"
 msgstr "Alben"
 
+msgid "on"
+msgstr "vom"
+
 msgid "pixels"
 msgstr "Pixel"
 
 msgid "sometimes it is nice to give the image a title"
 msgstr "Manchmal ist es schön, wenn sie dem Bild einen Titel geben"
+
+#~ msgid "A direct feed showing the list of album items"
+#~ msgstr "Eine direkter Feed zeigt die Liste der Bilder"
+
+#~ msgid "A direct feed showing the list of albums"
+#~ msgstr "Eine direkter Feed zeigt die Liste der Alben"
+
+#, fuzzy
+#~ msgid "Album form aware provider"
+#~ msgstr "Album Form bewusst Anbieter"
+
+#~ msgid "Dummy album choice"
+#~ msgstr "Dummy-Album Auswahl"
+
+#~ msgid "Dummy album text"
+#~ msgstr "Dummy-Album Text"
+
+#~ msgid "Fine art photographer filter hooks provider"
+#~ msgstr "Fotografenmodul Filter Hook Anbieter"
+
+#~ msgid "Latest album items"
+#~ msgstr "Neuesten Bilder"
+
+#~ msgid "Latest albums"
+#~ msgstr "Neueste Alben"
+
+#~ msgid "Option A"
+#~ msgstr "Option A"
+
+#~ msgid ""
+#~ "The image will be shriked automatically right after the upload. The "
+#~ "shrink size can be configured by the administrator."
+#~ msgstr ""
+#~ "Direkt nach dem Upload wird das Bild automatisch verkleinert werden. Die "
+#~ "Größe kann vom Administrator konfiguriert werden."
+
+#, fuzzy
+#~ msgid "This is a dummy addition by a generated filter provider."
+#~ msgstr ""
+#~ "Dies ist ein Dummy-Ergänzung durch einen generierten Filter-Anbieter."
