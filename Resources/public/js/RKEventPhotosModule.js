@@ -160,9 +160,11 @@ function rKEventPhotosInitQuickViewModals() {
  * Initialises image viewing behaviour.
  */
 function rKEventPhotosInitImageViewer() {
-    if (typeof(magnificPopup) === 'undefined') {
-        return;
-    }
+/**	
+*    if (typeof(magnificPopup) === 'undefined') {
+*        return;
+*    }
+*/
     jQuery('a.image-link').magnificPopup({
         type: 'image',
         closeOnContentClick: true,
