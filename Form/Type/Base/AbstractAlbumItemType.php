@@ -174,7 +174,7 @@ abstract class AbstractAlbumItemType extends AbstractType
             'help' => $this->__('sometimes it is nice to give the image a title'),
             'empty_data' => '',
             'attr' => [
-                'maxlength' => 25,
+                'maxlength' => 30,
                 'class' => '',
                 'title' => $this->__('Enter the image title of the album item')
             ],

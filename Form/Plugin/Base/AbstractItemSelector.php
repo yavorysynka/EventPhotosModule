@@ -107,8 +107,8 @@ class AbstractItemSelector extends Zikula_Form_Plugin_TextInput implements Conta
             $jsAssetBag = $this->container->get('zikula_core.common.theme.assets_js');
             $homePath = $this->container->get('request_stack')->getCurrentRequest()->getBasePath();
 
-            $jsAssetBag->add($homePath . '/web/magnific-popup/jquery.magnific-popup.min.js');
-            $cssAssetBag->add($homePath . '/web/magnific-popup/magnific-popup.css');
+            $jsAssetBag->add($homePath . '/web/magnific-popup/jquery.magnific-popup.min.js' => 90);
+            $cssAssetBag->add($homePath . '/web/magnific-popup/magnific-popup.css' => 90);
             $jsAssetBag->add($assetHelper->resolve('@RKEventPhotosModule:js/RKEventPhotosModule.js'));
             $jsAssetBag->add($assetHelper->resolve('@RKEventPhotosModule:js/RKEventPhotosModule.ItemSelector.js'));
             $cssAssetBag->add($assetHelper->resolve('@RKEventPhotosModule:css/style.css'));

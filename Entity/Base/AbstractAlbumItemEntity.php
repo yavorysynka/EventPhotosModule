@@ -107,9 +107,9 @@ abstract class AbstractAlbumItemEntity extends EntityAccess implements Translata
      * sometimes it is nice to give the image a title
      *
      * @Gedmo\Translatable
-     * @ORM\Column(length=25)
+     * @ORM\Column(length=30)
      * @Assert\NotNull()
-     * @Assert\Length(min="0", max="25")
+     * @Assert\Length(min="0", max="30")
      * @var string $imageTitle
      */
     protected $imageTitle = '';

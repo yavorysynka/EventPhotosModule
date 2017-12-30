@@ -1,6 +1,6 @@
 {# Purpose of this template: Display one certain album item within an external context #}
-{{ pageAddAsset('javascript', asset('magnific-popup/jquery.magnific-popup.min.js')) }}
-{{ pageAddAsset('stylesheet', asset('magnific-popup/magnific-popup.css')) }}
+{{ pageAddAsset('javascript', asset('magnific-popup/jquery.magnific-popup.min.js'), 90) }}
+{{ pageAddAsset('stylesheet', asset('magnific-popup/magnific-popup.css'), 90) }}
 {{ pageAddAsset('javascript', zasset('@RKEventPhotosModule:js/RKEventPhotosModule.js')) }}
 <div id="albumItem{{ albumItem.getKey() }}" class="rkeventphotosmodule-external-albumitem">
 {% if displayMode == 'link' %}

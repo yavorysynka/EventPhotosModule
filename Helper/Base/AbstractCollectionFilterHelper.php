@@ -199,24 +199,26 @@ abstract class AbstractCollectionFilterHelper
         $parameters = $this->getViewQuickNavParametersForAlbum();
         foreach ($parameters as $k => $v) {
             if ($k == 'catId') {
-                // single category filter
-                if ($v > 0) {
+                if (intval($v) > 0) {
+                    // single category filter
                     $qb->andWhere('tblCategories.category = :category')
                        ->setParameter('category', $v);
                 }
-            } elseif ($k == 'catIdList') {
+                continue;
+            }
+            if ($k == 'catIdList') {
                 // multi category filter
-                /* old
-                $qb->andWhere('tblCategories.category IN (:categories)')
-                   ->setParameter('categories', $v);
-                 */
                 $qb = $this->categoryHelper->buildFilterClauses($qb, 'album', $v);
-            } elseif (in_array($k, ['q', 'searchterm'])) {
+                continue;
+            }
+            if (in_array($k, ['q', 'searchterm'])) {
                 // quick search
                 if (!empty($v)) {
                     $qb = $this->addSearchFilter('album', $qb, $v);
                 }
+                continue;
             }
+    
             if (is_array($v)) {
                 continue;
             }
@@ -261,24 +263,26 @@ abstract class AbstractCollectionFilterHelper
         $parameters = $this->getViewQuickNavParametersForAlbumItem();
         foreach ($parameters as $k => $v) {
             if ($k == 'catId') {
-                // single category filter
-                if ($v > 0) {
+                if (intval($v) > 0) {
+                    // single category filter
                     $qb->andWhere('tblCategories.category = :category')
                        ->setParameter('category', $v);
                 }
-            } elseif ($k == 'catIdList') {
+                continue;
+            }
+            if ($k == 'catIdList') {
                 // multi category filter
-                /* old
-                $qb->andWhere('tblCategories.category IN (:categories)')
-                   ->setParameter('categories', $v);
-                 */
                 $qb = $this->categoryHelper->buildFilterClauses($qb, 'albumItem', $v);
-            } elseif (in_array($k, ['q', 'searchterm'])) {
+                continue;
+            }
+            if (in_array($k, ['q', 'searchterm'])) {
                 // quick search
                 if (!empty($v)) {
                     $qb = $this->addSearchFilter('albumItem', $qb, $v);
                 }
+                continue;
             }
+    
             if (is_array($v)) {
                 continue;
             }

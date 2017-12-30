@@ -19,7 +19,7 @@ application "EventPhotos" targets ZK15 {
     separateAdminTemplates true
     displayActionsStyle BUTTON_GROUP
     skipFiles "README.md,\r\nCHANGELOCK.md,\r\nResources/public/css/custom.css"
-    markFiles "Helper/EntityDisplayHelper.php,\r\nResources/views/base.html.twig,\r\nResources/views/AlbumItem/includeDisplayItemListMany.html.twig,\r\nResources/views/AlbumItem/display.html.twig,\r\nResources/views/Album/display.html.twig,\r\nResources/views/Album/view.html.twig,\r\nResources/views/Album/viewQuickNav.html.twig,\r\nEntity/Repository/AlbumRepository.php, \r\nEventPhotosModuleInstaller.php,\r\n.gitignore,\r\nTwig/TwigExtension.php"
+    markFiles "Helper/EntityDisplayHelper.php,\r\nResources/views/base.html.twig,\r\nResources/views/AlbumItem/includeDisplayItemListMany.html.twig,\r\nResources/views/AlbumItem/display.html.twig,\r\nResources/views/Album/display.html.twig,\r\nResources/views/Album/view.html.twig,\r\nResources/views/Album/viewQuickNav.html.twig,\r\nEntity/Repository/AlbumRepository.php, \r\nEventPhotosModuleInstaller.php,\r\n.gitignore,\r\nTwig/TwigExtension.php,\r\nResources/public/js/RKEventPhotosModule.js"
     entities {
         entity "album" leading categorisable {
             documentation "Please add your photos only to your own album."
@@ -32,7 +32,7 @@ application "EventPhotos" targets ZK15 {
             fields {
                 string "albumTitle" translatable {
                     documentation "Choose a title for your album. The event name seem to be a good choice. Date and creator name will be automatically included."
-                length 25
+                length 30
                 },
                 datetime "albumDate" {
                     documentation "The date will be included in the headline and will be used for sorting."
@@ -42,7 +42,7 @@ application "EventPhotos" targets ZK15 {
                     documentation "This description is used to give a short introduction about the event. It is not mandatory."
                     mandatory false
                     displayType DISPLAY
-                length 200
+                length 250
                 }
             }
             actions {
@@ -73,7 +73,7 @@ application "EventPhotos" targets ZK15 {
                 string "imageTitle" translatable {
                     documentation "sometimes it is nice to give the image a title"
                     mandatory false
-                length 25
+                length 30
                 }
             ,
                 text "imageDescription" translatable {
