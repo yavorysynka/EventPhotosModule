@@ -138,7 +138,7 @@ msgid "Approved"
 msgstr "Genehmigt"
 
 msgid "Ascending"
-msgstr "Abwärts"
+msgstr "aufwärts"
 
 msgid "Assigned albums"
 msgstr "Zugeordnete Alben"
@@ -287,7 +287,7 @@ msgid "Deleted"
 msgstr "Gelöscht"
 
 msgid "Descending"
-msgstr "Aufwärts"
+msgstr "Abwärts"
 
 msgid "Detach %name%"
 msgstr "%name% entfernen"
