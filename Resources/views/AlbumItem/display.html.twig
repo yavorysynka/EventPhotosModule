@@ -2,10 +2,7 @@
 {% set baseTemplate = app.request.query.getBoolean('raw', false) ? 'raw' : 'base' %}
 {% extends 'RKEventPhotosModule::' ~ baseTemplate ~ '.html.twig' %}
 {% block pageTitle %}{{ albumItem|rkeventphotosmodule_formattedTitle|default(__('Album item')) }}{% endblock %}
-{% block title %}
-    {% set templateTitle = albumItem|rkeventphotosmodule_formattedTitle|default(__('Album item')) %}
-    {{ templateTitle|notifyFilters('rkeventphotosmodule.filter_hooks.albumitems.filter')|safeHtml }}{% if routeArea == 'admin' %} <small>({{ albumItem.workflowState|rkeventphotosmodule_objectState(false)|lower }})</small>{% endif %}
-{% endblock %}
+{% block appTitle %}{% endblock %}
 {% block content %}
     {% set isQuickView = app.request.query.getBoolean('raw', false) %}
     <div class="rkeventphotosmodule-albumitem rkeventphotosmodule-display">

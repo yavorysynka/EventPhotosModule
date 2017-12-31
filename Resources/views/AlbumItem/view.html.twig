@@ -1,6 +1,7 @@
 {# purpose of this template: album items user list view #}
 {% extends 'RKEventPhotosModule::base.html.twig' %}
 {% block title own ? __('My album items') : __('Album items list') %}
+{% block appTitle %}{% endblock %}
 {% block content %}
 <div class="rkeventphotosmodule-albumitem rkeventphotosmodule-view">
 
@@ -81,10 +82,10 @@
                 </td>
                 {% endif %}<td headers="hImage" class="text-left">
                     {% if albumItem.imageMeta|default %}
-                    <a href="{{ albumItem.imageUrl }}" title="{{ albumItem|rkeventphotosmodule_formattedTitle|e('html_attr') }}"{% if albumItem.imageMeta.isImage %} class="image-link"{% endif %}>
+                    <a href="{{ albumItem.imageUrl }}" title="{{ albumItem|rkeventphotosmodule_formattedTitle|e('html_attr') }}"{% if albumItem.imageMeta.isImage %} data-fancybox="gallery"{% endif %}>
                     {% if albumItem.imageMeta.isImage %}
                         {% set thumbOptions = attribute(thumbRuntimeOptions, 'albumItemImage') %}
-                        <img src="{{ albumItem.image.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ albumItem|rkeventphotosmodule_formattedTitle|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
+                        <img src="{{ albumItem.image.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ albumItem|rkeventphotosmodule_formattedTitle|e('html_attr') }}" class="img-thumbnail" />
                     {% else %}
                         {{ __('Download') }} ({{ albumItem.imageMeta.size|rkeventphotosmodule_fileSize(albumItem.image.getPathname(), false, false) }})
                     {% endif %}
