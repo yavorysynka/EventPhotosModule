@@ -28,10 +28,10 @@ workflow:
                 submit:
                     from: [initial, deferred]
                     to: approved
-                update:
+                updateapproved:
                     from: approved
                     to: approved
-                update:
+                updatedeferred:
                     from: deferred
                     to: deferred
                 trashdeferred:
