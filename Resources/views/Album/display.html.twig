@@ -41,11 +41,12 @@
 			<div class="panel-footer">
 					{% if hookAssignments|length > 0 %}
 					<p>{{ __('This album is assigned to the following data objects:') }}</p>
-					<ul>
+					
 					{% for assignment in hookAssignments %}
-						<li><a href="{{ assignment.url|e('html_attr') }}" title="{{ __('View this object')|e('html_attr') }}">{{ assignment.text }}</a></li>
+						<a href="{{ assignment.url|e('html_attr') }}" title="{{ __('View this object')|e('html_attr')}}"  type="button" class="btn btn-default btn-xs">{{ assignment.text }}</a>
+						
 					{% endfor %}
-					</ul>
+					
 				{% else %}
 					<p>{{ __('This album is not assigned to any data objects yet.') }}</p>
 				{% endif %}
