@@ -12,6 +12,8 @@
 
 namespace RK\EventPhotosModule\Form\Type\QuickNavigation;
 
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use RK\EventPhotosModule\Form\Type\QuickNavigation\Base\AbstractAlbumQuickNavType;
 
 /**
@@ -20,4 +22,32 @@ use RK\EventPhotosModule\Form\Type\QuickNavigation\Base\AbstractAlbumQuickNavTyp
 class AlbumQuickNavType extends AbstractAlbumQuickNavType
 {
     // feel free to extend the base form type class here
+    /**
+     * Adds a page size field.
+     *
+     * @param FormBuilderInterface $builder The form builder
+     * @param array                $options The options
+     */
+    public function addAmountField(FormBuilderInterface $builder, array $options = [])
+    {
+        $builder->add('num', ChoiceType::class, [
+            'label' => $this->__('Page size'),
+            'empty_data' => 20,
+            'attr' => [
+                'class' => 'input-sm text-right'
+            ],
+            'choices' => [
+                $this->__('4') => 4,
+                $this->__('8') => 8,
+                $this->__('12') => 12,
+                $this->__('16') => 16,
+                $this->__('20') => 20,
+                $this->__('40') => 40,
+                $this->__('80') => 80
+            ],
+            'choices_as_values' => true,
+            'required' => false,
+            'expanded' => false
+        ]);
+    }
 }
