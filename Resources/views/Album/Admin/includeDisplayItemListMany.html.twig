@@ -65,14 +65,14 @@
     <div id="{{ idPrefix }}LiveSearch" class="rkeventphotosmodule-add-hook-assignment">
         <a id="{{ idPrefix }}AddLink" href="javascript:void(0);" title="{{ addLinkText|e('html_attr') }}" class="attach-rkeventphotosmodule-object hidden" data-owner="{{ subscriberOwner|e('html_attr') }}" data-area-id="{{ subscriberAreaId|e('html_attr') }}" data-object-id="{{ subscriberObjectId|e('html_attr') }}" data-url="{{ subscriberUrl|e('html_attr') }}" data-assigned-entity="album"><i class="fa fa-link"></i> {{ addLinkText }}</a>
         <div id="{{ idPrefix }}AddFields" class="rkeventphotosmodule-autocomplete">
-            <label for="{{ idPrefix }}Selector">{{ __f('Find %name%', {'%name%': entityNameTranslated}) }}</label>
+            <label for="{{ idPrefix }}Selector">{{ __f('Find %name%', {'%name%': entityNameTranslated}, 'rkeventphotosmodule') }}</label>
             <br />
-            <i class="fa fa-search" title="{{ __f('Search %name%', {'%name%': entityNameTranslated})|e('html_attr') }}"></i>
+            <i class="fa fa-search" title="{{ __f('Search %name%', {'%name%': entityNameTranslated}, 'rkeventphotosmodule')|e('html_attr') }}"></i>
             <input type="hidden" name="{{ idPrefix }}" id="{{ idPrefix }}" value="{% for assignment in assignments %}{% if not loop.first %},{% endif %}{{ assignment.getAssignedId() }}{% endfor %}" />
             <input type="hidden" name="{{ idPrefix }}Multiple" id="{{ idPrefix }}Multiple" value="0" />
             <input type="text" id="{{ idPrefix }}Selector" name="{{ idPrefix }}Selector" autocomplete="off" />
             <input type="button" id="{{ idPrefix }}SelectorDoCancel" name="{{ idPrefix }}SelectorDoCancel" value="{{ __('Cancel', 'rkeventphotosmodule') }}" class="btn btn-default rkeventphotosmodule-inline-button" />
-            <a id="{{ idPrefix }}SelectorDoNew" href="{{ path('rkeventphotosmodule_album_' ~ routeArea ~ 'edit') }}" title="{{ __f('Create new %name%', {'%name%': entityNameTranslated}) }}" class="btn btn-default rkeventphotosmodule-inline-button"><i class="fa fa-plus"></i> {{ __('Create') }}</a>
+            <a id="{{ idPrefix }}SelectorDoNew" href="{{ path('rkeventphotosmodule_album_' ~ routeArea ~ 'edit') }}" title="{{ __f('Create new %name%', {'%name%': entityNameTranslated}, 'rkeventphotosmodule') }}" class="btn btn-default rkeventphotosmodule-inline-button"><i class="fa fa-plus"></i> {{ __('Create') }}</a>
             <noscript><p>{{ __('This function requires JavaScript activated!') }}</p></noscript>
         </div>
     </div>

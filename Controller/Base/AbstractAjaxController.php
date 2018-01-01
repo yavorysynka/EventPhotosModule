@@ -151,7 +151,10 @@ abstract class AbstractAjaxController extends AbstractController
             $routeParams['sort'] = $sort;
             $request->attributes->set('_route_params', $routeParams);
         }
-        $sortParam = $sort . ' asc';
+        $sortParam = $sort;
+        if (false === strpos(strtolower($sort), ' asc') && false === strpos(strtolower($sort), ' desc')) {
+            $sortParam .= ' asc';
+        }
         
         $currentPage = 1;
         $resultsPerPage = 20;
