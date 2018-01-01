@@ -118,6 +118,11 @@ msgstr "Alle außer freigegebene"
 msgid "All except deferred"
 msgstr "Alle außer zurückgestellte"
 
+#, fuzzy
+#| msgid "All except approved"
+msgid "All except trashed"
+msgstr "Alle außer freigegebene"
+
 msgid "Allowed file extensions"
 msgstr "Erlaubte Dateiendungen"
 
@@ -200,6 +205,12 @@ msgstr "Sicherheitsabfrage"
 
 msgid "Content has been approved and is available online."
 msgstr "Inhalt wurde geprüft und ist online verfügbar."
+
+msgid ""
+"Content has been marked as deleted, but is still persisted in the database."
+msgstr ""
+"Inhalt wurde als gelöscht gekennzeichnet , ist aber immer noch in der "
+"Datenbank vorhanden."
 
 msgid ""
 "Content has not been submitted yet or has been waiting, but was rejected."
@@ -558,6 +569,13 @@ msgid "ID of album item"
 msgstr "ID des Bilds"
 
 msgid ""
+"If blank the uploading user will get the copyright. If you want to overwrite "
+"please fill in this."
+msgstr ""
+"Bleibt dieses Feld leer wird der Upload Benutzer das Urheberrecht erhalten. "
+"Wenn Sie es überschreiben möchten, füllen Sie bitte dieses Feld aus."
+
+msgid ""
 "If you change this please save the block once to reload the parameters below."
 msgstr ""
 "Wenn das geändert wird, bitte den Block einmal speichern, um die Parameter "
@@ -722,6 +740,9 @@ msgstr "Zufällig"
 msgid "Read more"
 msgstr "Weiterlesen"
 
+msgid "Recover"
+msgstr "Wiederherstellen"
+
 msgid "Reject"
 msgstr "Zurückgezogen"
 
@@ -781,6 +802,11 @@ msgstr "Zeigt alle Einträge außer den Freigegebenen"
 
 msgid "Shows all items except these which are deferred"
 msgstr "Zeigt alle Elemente außer den zurückgestellten"
+
+#, fuzzy
+#| msgid "Shows all items except these which are approved"
+msgid "Shows all items except these which are trashed"
+msgstr "Zeigt alle Einträge außer den Freigegebenen"
 
 msgid "Shrink height album item image"
 msgstr "Reduzierte Bildhöhe"
@@ -858,19 +884,13 @@ msgstr ""
 "Der Cache-Verzeichnis \"%directory%\" ist nicht vorhanden. Bitte erstellen "
 "Sie es und machen Sie es für den Webserver beschreibbar."
 
-msgid "The date will be included in the headline"
+#, fuzzy
+#| msgid "The date will be included in the headline"
+msgid "The date will be included in the headline and will be used for sorting."
 msgstr "Das Datum wird in die Überschrift eingefügt"
 
 msgid "The enable shrinking option"
 msgstr "Die Option zur Bildverkleinerung"
-
-msgid ""
-"The image must fit to the maximum dimension. If shrinking is enabled it will "
-"be shrinked automatically."
-msgstr ""
-"Das Bild wird automatisch verkleinert. Kommt eine Fehlermeldung, reicht der "
-"interne Speicher des Servers nicht zum verkleinern. In dem Fall bitte selber "
-"das Bild verkleinern und dann erneut hochladen."
 
 msgid "The link own album items on account page option"
 msgstr "Die Option zur Anzeige der eigenen Bilder im Benutzerkonto"
@@ -907,6 +927,14 @@ msgstr ""
 msgid "The value \"%value%\" is not allowed for the \"%property%\" property."
 msgstr ""
 "Der Wert \"%value%\" ist für die Eigenschaft \"%property%\" nicht zulässig."
+
+msgid ""
+"There is no maximum for the image size. If images are to big a memory error "
+"might occur. The administrator can switch on automatic shrinking."
+msgstr ""
+"Es gibt keine Obergrenze für die Bildgröße. Wenn Bilder zu groß sind, kann "
+"ein Speicherfehler auftreten. Der Administrator kann auf automatisches "
+"verkleinern einstellen (Standardeinstellung)."
 
 msgid "These options allow you to configure integration aspects."
 msgstr "Diese Optionen erlauben Integrationsaspekte zu konfigurieren."
@@ -971,6 +999,12 @@ msgstr "Thumbnail Breite auf Edit Seiten in Pixel."
 
 msgid "Thumbnail width on view pages in pixels."
 msgstr "Thumbnail Breite auf View Seiten in Pixel."
+
+msgid "Trash"
+msgstr "Papierkorb"
+
+msgid "Trashed"
+msgstr "Gelöscht"
 
 msgid "Update"
 msgstr "Aktualisieren"
@@ -1053,10 +1087,11 @@ msgstr "Mit ausgewählten Alben"
 msgid "Workflows"
 msgstr "Arbeitsabläufe"
 
-msgid "You may want to label your image with your copyright."
-msgstr "Vielleicht möchten Ihr Bild mit Ihrem Urheberrecht kennzeichnen."
-
-msgid "You may want to tell a bit about the shooting and the parameters."
+#, fuzzy
+#| msgid "You may want to tell a bit about the shooting and the parameters."
+msgid ""
+"You may want to tell a bit about the shooting. The exif parameters are "
+"visible in detail view of the image."
 msgstr ""
 "Vielleicht möchten ein wenig über das Shooting und die Parameter erzählen."
 
@@ -1069,6 +1104,9 @@ msgstr "Bilder"
 msgid "albums"
 msgstr "Alben"
 
+msgid "more image details"
+msgstr "Weitere Bildinformationen"
+
 msgid "on"
 msgstr "vom"
 
@@ -1077,6 +1115,17 @@ msgstr "Pixel"
 
 msgid "sometimes it is nice to give the image a title"
 msgstr "Manchmal ist es schön, wenn sie dem Bild einen Titel geben"
+
+#~ msgid ""
+#~ "The image must fit to the maximum dimension. If shrinking is enabled it "
+#~ "will be shrinked automatically."
+#~ msgstr ""
+#~ "Das Bild wird automatisch verkleinert. Kommt eine Fehlermeldung, reicht "
+#~ "der interne Speicher des Servers nicht zum verkleinern. In dem Fall bitte "
+#~ "selber das Bild verkleinern und dann erneut hochladen."
+
+#~ msgid "You may want to label your image with your copyright."
+#~ msgstr "Vielleicht möchten Ihr Bild mit Ihrem Urheberrecht kennzeichnen."
 
 #~ msgid "A direct feed showing the list of album items"
 #~ msgstr "Eine direkter Feed zeigt die Liste der Bilder"
