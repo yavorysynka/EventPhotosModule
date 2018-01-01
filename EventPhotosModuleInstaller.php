@@ -30,7 +30,7 @@ public function install()
 
         // eigene Werte setzen
         // set up all our vars with initial values
-        // $this->setVar('albumEntriesPerPage', 10);
+        $this->setVar('albumEntriesPerPage', 4);
         // $this->setVar('linkOwnAlbumsOnAccountPage', true);
         // $this->setVar('albumItemEntriesPerPage', 10);
         // $this->setVar('linkOwnAlbumItemsOnAccountPage', true);
