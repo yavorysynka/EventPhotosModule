@@ -12,8 +12,6 @@
 
 namespace RK\EventPhotosModule\Form\Type\QuickNavigation;
 
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use RK\EventPhotosModule\Form\Type\QuickNavigation\Base\AbstractAlbumQuickNavType;
 
 /**
@@ -22,72 +20,4 @@ use RK\EventPhotosModule\Form\Type\QuickNavigation\Base\AbstractAlbumQuickNavTyp
 class AlbumQuickNavType extends AbstractAlbumQuickNavType
 {
     // feel free to extend the base form type class here
-    /**
-     * Adds a page size field.
-     *
-     * @param FormBuilderInterface $builder The form builder
-     * @param array                $options The options
-     */
-    public function addAmountField(FormBuilderInterface $builder, array $options = [])
-    {
-        $builder->add('num', ChoiceType::class, [
-            'label' => $this->__('Page size'),
-            'empty_data' => 4,
-            'attr' => [
-                'class' => 'input-sm text-right'
-            ],
-            'choices' => [
-                $this->__('4') => 4,
-                $this->__('8') => 8,
-                $this->__('12') => 12,
-                $this->__('16') => 16,
-                $this->__('20') => 20,
-                $this->__('40') => 40,
-                $this->__('80') => 80
-            ],
-            'choices_as_values' => true,
-            'required' => false,
-            'expanded' => false
-        ]);
-    }
-	
-    /**
-     * Adds sorting fields.
-     *
-     * @param FormBuilderInterface $builder The form builder
-     * @param array                $options The options
-     */
-    public function addSortingFields(FormBuilderInterface $builder, array $options = [])
-    {
-        $builder
-            ->add('sort', ChoiceType::class, [
-                'label' => $this->__('Sort by'),
-                'attr' => [
-                    'class' => 'input-sm'
-                ],
-                'choices' =>             [
-                    $this->__('Album title') => 'albumTitle',
-                    $this->__('Album date') => 'albumDate',
-                    $this->__('Creator') => 'createdBy'
-                ],
-                'choices_as_values' => true,
-                'required' => true,
-                'expanded' => false
-            ])
-            ->add('sortdir', ChoiceType::class, [
-                'label' => $this->__('Sort direction'),
-                'empty_data' => 'asc',
-                'attr' => [
-                    'class' => 'input-sm'
-                ],
-                'choices' => [
-                    $this->__('Ascending') => 'asc',
-                    $this->__('Descending') => 'desc'
-                ],
-                'choices_as_values' => true,
-                'required' => true,
-                'expanded' => false
-            ])
-        ;
-    }
 }

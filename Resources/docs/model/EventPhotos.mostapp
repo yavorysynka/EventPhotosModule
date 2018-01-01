@@ -32,7 +32,7 @@ application "EventPhotos" targets ZK15 {
             fields {
                 string "albumTitle" translatable {
                     documentation "Choose a title for your album. The event name seem to be a good choice. Date and creator name will be automatically included."
-                length 30
+                length 31
                 },
                 datetime "albumDate" {
                     documentation "The date will be included in the headline and will be used for sorting."

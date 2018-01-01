@@ -152,7 +152,7 @@ abstract class AbstractAlbumType extends AbstractType
             'help' => $this->__('Choose a title for your album. The event name seem to be a good choice. Date and creator name will be automatically included.'),
             'empty_data' => '',
             'attr' => [
-                'maxlength' => 30,
+                'maxlength' => 31,
                 'class' => '',
                 'title' => $this->__('Enter the album title of the album')
             ],
