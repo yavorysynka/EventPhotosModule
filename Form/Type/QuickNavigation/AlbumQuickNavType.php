@@ -32,7 +32,7 @@ class AlbumQuickNavType extends AbstractAlbumQuickNavType
     {
         $builder->add('num', ChoiceType::class, [
             'label' => $this->__('Page size'),
-            'empty_data' => 20,
+            'empty_data' => 4,
             'attr' => [
                 'class' => 'input-sm text-right'
             ],
@@ -49,5 +49,45 @@ class AlbumQuickNavType extends AbstractAlbumQuickNavType
             'required' => false,
             'expanded' => false
         ]);
+    }
+	
+    /**
+     * Adds sorting fields.
+     *
+     * @param FormBuilderInterface $builder The form builder
+     * @param array                $options The options
+     */
+    public function addSortingFields(FormBuilderInterface $builder, array $options = [])
+    {
+        $builder
+            ->add('sort', ChoiceType::class, [
+                'label' => $this->__('Sort by'),
+                'attr' => [
+                    'class' => 'input-sm'
+                ],
+                'choices' =>             [
+                    $this->__('Album title') => 'albumTitle',
+                    $this->__('Album date') => 'albumDate',
+                    $this->__('Creator') => 'createdBy'
+                ],
+                'choices_as_values' => true,
+                'required' => true,
+                'expanded' => false
+            ])
+            ->add('sortdir', ChoiceType::class, [
+                'label' => $this->__('Sort direction'),
+                'empty_data' => 'asc',
+                'attr' => [
+                    'class' => 'input-sm'
+                ],
+                'choices' => [
+                    $this->__('Ascending') => 'asc',
+                    $this->__('Descending') => 'desc'
+                ],
+                'choices_as_values' => true,
+                'required' => true,
+                'expanded' => false
+            ])
+        ;
     }
 }
