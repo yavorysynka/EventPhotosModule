@@ -19,7 +19,7 @@
         {% if albumItem.image is not empty %}
             <dt>{{ __('Image') }}</dt>
             <dd>{% if albumItem.imageMeta|default %}
-            <a href="{{ albumItem.imageUrl }}" title="{{ albumItem|rkeventphotosmodule_formattedTitle|e('html_attr') }}"{% if albumItem.imageMeta.isImage %} class="image-link"{% endif %}>
+            <a href="{{ albumItem.imageUrl }}" title="{{ albumItem|rkeventphotosmodule_formattedTitle|e('html_attr') }}"{% if albumItem.imageMeta.isImage %} data-fancybox="gallery"{% endif %}>
             {% if albumItem.imageMeta.isImage %}
                 {% set thumbOptions = attribute(thumbRuntimeOptions, 'albumItemImage') %}
                 <img src="{{ albumItem.image.getPathname()|imagine_filter('zkroot', thumbOptions) }}" alt="{{ albumItem|rkeventphotosmodule_formattedTitle|e('html_attr') }}" width="{{ thumbOptions.thumbnail.size[0] }}" height="{{ thumbOptions.thumbnail.size[1] }}" class="img-thumbnail" />
@@ -65,19 +65,32 @@
         {% endif %}
         
     </dl>
-<h4>{{ __('EXIF selection') }}</h4>	
-<ul>
-    {% for fieldName, fieldValue in albumItem.imageMeta if  fieldName in ['exif.FNumber', 'exif.Flash', 'exif.ISOSpeedRatings', 'exif.FocalLengthIn35mmFilm', 'exif.ExposureTime', 'ifd0.Make', 'ifd0.Model'] %}
-        <li><strong>{{ fieldName|replace({ 'exif.': '' }) }}:</strong> {% if fieldValue is iterable %}{{ fieldValue|join(', ') }}{% else %}{{ fieldValue }}{% endif %}</li>
-    {% endfor %}
-</ul>
+<!-- <h4>{{ __('EXIF selection') }}</h4>	 -->
+<!-- <ul> -->
+    <!-- {% for fieldName, fieldValue in albumItem.imageMeta if  fieldName in ['exif.FNumber', 'exif.Flash', 'exif.ISOSpeedRatings', 'exif.FocalLengthIn35mmFilm', 'exif.ExposureTime', 'ifd0.Make', 'ifd0.Model'] %} -->
+        <!-- <li><strong>{{ fieldName|replace({ 'exif.': '' }) }}:</strong> {% if fieldValue is iterable %}{{ fieldValue|join(', ') }}{% else %}{{ fieldValue }}{% endif %}</li> -->
+    <!-- {% endfor %} -->
+<!-- </ul> -->
 
-<h4>alle EXIF für die Entwicklung (fliegt später wieder raus)</h4>
-<ul>
-    {% for fieldName, fieldValue in albumItem.imageMeta %}
-        <li><strong>{{ fieldName|replace({ 'exif.': '' }) }}:</strong> {% if fieldValue is iterable %}{{ fieldValue|join(', ') }}{% else %}{{ fieldValue }}{% endif %}</li>
-    {% endfor %}
-</ul>
+<div class="panel-group" role="tablist">
+    <div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="collapseExifHeadline1">
+			<h4 class="panel-title">
+			  <a class="" role="button" data-toggle="collapse" href="#collapseListgroup1" aria-expanded="false" aria-controls="collapseListgroup1">
+				{{ __('EXIF raw data') }}
+			  </a>
+			</h4>
+		</div>
+		<div id="collapseListgroup1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseExifHeadline1" aria-expanded="false" style="">
+			<ul class="list-group">
+				{% for fieldName, fieldValue in albumItem.imageMeta %}
+					<li class="list-group-item"><strong>{{ fieldName|replace({ 'exif.': '' }) }}:</strong> {% if fieldValue is iterable %}{{ fieldValue|join(', ') }}{% else %}{{ fieldValue }}{% endif %}</li>
+				{% endfor %}
+			</ul>
+		<div class="panel-footer">Footer</div>
+		</div>
+    </div>
+</div>
 
 	
 
