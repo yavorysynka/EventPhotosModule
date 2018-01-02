@@ -62,8 +62,8 @@ https://github.com/Pixabay/jQuery-flexImages
 
 ## Bug reports, issues and improvements
 
-If you find any bug or you have some issues or improvements please do not hesitate to add an issue in the [Github issue tracker] (https://github.com/rallek/EventPhotosModule/issues) of this module. Any pull request is wellcome. 
+If you find any bug or you have some issues or improvements please do not hesitate to add an issue in the [Github issue tracker](https://github.com/rallek/EventPhotosModule/issues) of this module. Any pull request is wellcome. 
 
 ## Many Thanks
 
-Without [modulestudio] (https://modulestudio.de) this module would never existing. I am not a programmer. My own skills are very limited. But I do not have to thank Axel for his module but also for his patience and additional help during the development of this module. His support and his modulestudio are a big help. Thank You!
+Without [modulestudio](https://modulestudio.de) this module would never existing. I am not a programmer. My own skills are very limited. But I do not have to thank Axel for his module but also for his patience and additional help during the development of this module. His support and his modulestudio are a big help. Thank You!
