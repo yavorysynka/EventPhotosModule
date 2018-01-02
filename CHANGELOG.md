@@ -1,3 +1,3 @@
 # CHANGELOG
 
-Changes in RKEventPhotosModule 0.1.0
+Changes in RKEventPhotosModule 1.0.0

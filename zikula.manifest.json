@@ -10,7 +10,7 @@
         "icon": ""
     },
     "version": {
-        "semver": "0.1.0",
+        "semver": "1.0.0",
         "compatibility": ">=1.5.4 <3.0.0",
         "composerpath": "composer.json",
         "description": "Event Photos Module is offering the possibility to share interesting photos. If you want to share yourself your photos please contact the site administrator and ask for the rights.",
