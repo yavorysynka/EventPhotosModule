@@ -19,7 +19,7 @@ application "EventPhotos" targets ZK15 {
     separateAdminTemplates true
     displayActionsStyle BUTTON_GROUP
     skipFiles "README.md,\r\nCHANGELOCK.md,\r\nResources/public/css/custom.css"
-    markFiles "Helper/EntityDisplayHelper.php,\r\nResources/views/base.html.twig,\r\nResources/views/AlbumItem/includeDisplayItemListMany.html.twig,\r\nResources/views/AlbumItem/view.html.twig,\r\nResources/views/AlbumItem/display.html.twig,\r\nResources/views/Album/display.html.twig,\r\nResources/views/Album/view.html.twig,\r\nResources/views/Album/viewQuickNav.html.twig,\r\nEntity/Repository/AlbumRepository.php, \r\nEventPhotosModuleInstaller.php,\r\n.gitignore,\r\nTwig/TwigExtension.php,\r\nResources/public/js/RKEventPhotosModule.js,\r\nForm/Type/QuickNavigation/AlbumQuickNavType.php"
+    markFiles "Helper/EntityDisplayHelper.php,\r\nResources/views/base.html.twig,\r\nResources/views/AlbumItem/includeDisplayItemListMany.html.twig,\r\nResources/views/AlbumItem/view.html.twig,\r\nResources/views/AlbumItem/display.html.twig,\r\nResources/views/Album/display.html.twig,\r\nResources/views/Album/view.html.twig,\r\nResources/views/Album/viewQuickNav.html.twig,\r\nEntity/Repository/AlbumRepository.php, \r\nEventPhotosModuleInstaller.php,\r\n.gitignore,\r\nTwig/TwigExtension.php,\r\nResources/public/js/RKEventPhotosModule.js,\r\nForm/Type/QuickNavigation/AlbumQuickNavType.php,\r\nForm/Type/QuickNavigation/AlbumItemQuickNavType.php"
     entities {
         entity "album" leading categorisable {
             documentation "Please add your photos only to your own album."
