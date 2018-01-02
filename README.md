@@ -32,3 +32,38 @@ There are the standard Content plugins of Modulestudio implemented.
 
 ## Configuration
 
+### Special Album settings
+
+The album is shown by the script flexImages. The maximum hight of the rows can be managed here.
+
+### List Views
+Here you can configure parameters for list views.
+### Images
+Image settings for album items image like shrinking or the different sizes for the images in different views.
+### Integration
+These options allow you to configure integration aspects. The selection will be used by the Scribite Plugin.
+### Workflows
+Here you can inspect and amend the existing workflows. This should be used by very experienced users only.
+
+## Third Party Scripts
+### fancyBox
+ 
+ FancyBox is the used lightbox for showing the images. They are touch enabled and responsive.
+ The configuration of that plugin is located in ``Resources/public/js/RKEventPhotosModule.fancyBox.js``
+ Normally there is no need to change anything here.
+ 
+ https://github.com/fancyapps/fancybox
+
+### flexImages
+
+FlexImges are used for creating fluid galleries in the album display.
+
+https://github.com/Pixabay/jQuery-flexImages
+
+## Bug reports, issues and improvements
+
+If you find any bug or you have some issues or improvements please do not hesitate to add an issue in the [https://github.com/rallek/EventPhotosModule/issues github] issue tracker of this module. Any pull request is wellcome. 
+
+## Many Thanks
+
+Without modulestudio this module would never existing. I am not a programmer. My own skills are very limited. But I do not have to thank Axel for his module but also for his patience and additional help during the development of this module. His support and his modulestudio are a big help. Thank You!
