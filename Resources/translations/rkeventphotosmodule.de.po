@@ -24,8 +24,14 @@ msgstr "10"
 msgid "100"
 msgstr "100"
 
+msgid "12"
+msgstr "12"
+
 msgid "15"
 msgstr "15"
+
+msgid "16"
+msgstr "16"
 
 msgid "20"
 msgstr "20"
@@ -33,11 +39,23 @@ msgstr "20"
 msgid "30"
 msgstr "30"
 
+msgid "4"
+msgstr "4"
+
+msgid "40"
+msgstr "40"
+
 msgid "5"
 msgstr "5"
 
 msgid "50"
 msgstr "50"
+
+msgid "8"
+msgstr "8"
+
+msgid "80"
+msgstr "80"
 
 msgid "Absolute url to the album"
 msgstr "Absolute Url zum Album"
@@ -60,13 +78,11 @@ msgstr "Album Beschreibung:"
 msgid "Album entries per page"
 msgstr "Anzahl Album Einträge pro Seite"
 
-#, fuzzy
 msgid "Album filter hooks subscriber"
-msgstr "Album-Filter-Haken-Abonnenten"
+msgstr "Album-Filter-Hook-Abonnenten"
 
-#, fuzzy
 msgid "Album form aware subscriber"
-msgstr "Album Form bewusst Abonnenten"
+msgstr "Album Form Aware Abonnenten"
 
 msgid "Album item"
 msgstr "Bild"
@@ -74,13 +90,11 @@ msgstr "Bild"
 msgid "Album item entries per page"
 msgstr "Anzahl Bilder pro Seite"
 
-#, fuzzy
 msgid "Album item filter hooks subscriber"
-msgstr "Bild Filter Haken Abonnenten"
+msgstr "Bild Filter Hooks Abonnenten"
 
-#, fuzzy
 msgid "Album item form aware subscriber"
-msgstr "Bild Form bewusst Abonnenten"
+msgstr "Bild Form Aware Abonnenten"
 
 msgid "Album item ui hooks subscriber"
 msgstr "Bild Ui Hook Abonnenten"
@@ -118,10 +132,8 @@ msgstr "Alle außer freigegebene"
 msgid "All except deferred"
 msgstr "Alle außer zurückgestellte"
 
-#, fuzzy
-#| msgid "All except approved"
 msgid "All except trashed"
-msgstr "Alle außer freigegebene"
+msgstr "Alle außer im Papierkorb"
 
 msgid "Allowed file extensions"
 msgstr "Erlaubte Dateiendungen"
@@ -309,14 +321,11 @@ msgstr "Dies %name% entfernen"
 msgid "Details"
 msgstr "Details"
 
-#, fuzzy
 msgid "Display list of RKEventPhotosModule objects."
-msgstr "Zeigt die Liste von RKFineArtPhotographerModule-Objekten."
+msgstr "Zeigt die Liste von RKEventPhotosModule -Objekten."
 
-#, fuzzy
 msgid "Display or link a single RKEventPhotosModule object."
-msgstr ""
-"Anzeigen oder ein einzelnes RKFineArtPhotographerModule-Objekt zu verknüpfen."
+msgstr "Anzeigen oder ein einzelnes RKEventPhotosModule -Objekt verknüpfen."
 
 msgid "Do you really want to delete this album item: \"%name%\" ?"
 msgstr "Möchten Sie wirklich diese Bild löschen: \"%name%\"?"
@@ -360,6 +369,9 @@ msgstr "Erledigt! Modul Konfiguration aktualisiert."
 msgid "Download"
 msgstr "Download"
 
+msgid "EXIF raw data"
+msgstr "EXIF Rohdaten"
+
 msgid "EXIF selection"
 msgstr "EXIF-Auswahl"
 
@@ -384,11 +396,9 @@ msgstr "Dieses Album bearbeiten"
 msgid "Edit this album item"
 msgstr "Dieses Bild bearbeiten"
 
-#, fuzzy
 msgid "Edit workflow for album items"
-msgstr "Workflow für Album Artikel bearbeiten"
+msgstr "Workflow für Bilder bearbeiten"
 
-#, fuzzy
 msgid "Edit workflow for albums"
 msgstr "Workflow für Alben bearbeiten"
 
@@ -410,63 +420,48 @@ msgstr "Geben Sie die Beschreibung des Albums an"
 msgid "Enter the album entries per page."
 msgstr "Anzahl Einträge pro Seite eintragen."
 
-#, fuzzy
 msgid "Enter the album item entries per page."
-msgstr "Geben Sie die Bild-Einträge pro Seite."
+msgstr "Geben Sie die Anzahl Bilde pro Seite an."
 
-#, fuzzy
 msgid "Enter the album title of the album"
-msgstr "Geben Sie den Albumtitel des Albums"
+msgstr "Geben Sie den Albumtitel des Albums ein"
 
-#, fuzzy
 msgid "Enter the copyright of the album item"
-msgstr "Geben Sie das Copyright des Bilds"
+msgstr "Geben Sie das Copyright des Bildes ein"
 
-#, fuzzy
 msgid "Enter the image description of the album item"
-msgstr "Geben Sie die Bildbeschreibung des Bilds"
+msgstr "Geben Sie die Bildbeschreibung ein"
 
-#, fuzzy
 msgid "Enter the image of the album item"
-msgstr "Geben Sie das Bild des Bilds"
+msgstr "Wählen Sie ein Bild"
 
-#, fuzzy
 msgid "Enter the image title of the album item"
-msgstr "Geben Sie den Bildtitel des Bilds"
+msgstr "Geben Sie den Bildtitel an"
 
-#, fuzzy
 msgid "Enter the row height."
-msgstr "Pixel für die reduziertebildhöhe."
+msgstr "Geben Sie die Zeilenhöhe an."
 
-#, fuzzy
 msgid "Enter the shrink height"
-msgstr "Pixel für die reduziertebildhöhe."
+msgstr "Pixel für die reduzierte Bildhöhe."
 
-#, fuzzy
 msgid "Enter the shrink width"
-msgstr "Pixel für die reduziertebildbreite."
+msgstr "Pixel für die reduzierte Bildbreite."
 
-#, fuzzy
 msgid "Enter the thumbnail height display"
 msgstr "Thumbnail Höhe Display Ansicht eintragen."
 
-#, fuzzy
 msgid "Enter the thumbnail height edit"
 msgstr "Thumbnail Höhe Bearbeitungsansicht eintragen."
 
-#, fuzzy
 msgid "Enter the thumbnail height view"
 msgstr "Thumbnail Höhe Listenansicht eintragen."
 
-#, fuzzy
 msgid "Enter the thumbnail width display"
 msgstr "Thumbnail Breite Display Ansicht eintragen."
 
-#, fuzzy
 msgid "Enter the thumbnail width edit"
 msgstr "Thumbnail Breite Bearbeitungsansicht eintragen."
 
-#, fuzzy
 msgid "Enter the thumbnail width view"
 msgstr "Thumbnail Breite Listenansicht eintragen."
 
@@ -517,10 +512,8 @@ msgstr "Fehler: ungültige Eingabe."
 msgid "Errors"
 msgstr "Fehler"
 
-#, fuzzy
-#| msgid "Fine art photographer Backend"
 msgid "Event photos Backend"
-msgstr "Fotografenmodul Backend"
+msgstr "Event Fotos Backend"
 
 msgid "Example"
 msgstr "Beispiel"
@@ -797,16 +790,20 @@ msgstr "Konfiguration"
 msgid "Show all entries"
 msgstr "Zeige alle Einträge"
 
+msgid "Show also entries from other users"
+msgstr "Zeige alle Einträge auch von anderen Anwendern"
+
+msgid "Show only own entries"
+msgstr "Zeige nur eigene Einträge"
+
 msgid "Shows all items except these which are approved"
 msgstr "Zeigt alle Einträge außer den Freigegebenen"
 
 msgid "Shows all items except these which are deferred"
 msgstr "Zeigt alle Elemente außer den zurückgestellten"
 
-#, fuzzy
-#| msgid "Shows all items except these which are approved"
 msgid "Shows all items except these which are trashed"
-msgstr "Zeigt alle Einträge außer den Freigegebenen"
+msgstr "Zeigt alle Elemente außer denen, die im Papierkorb sind"
 
 msgid "Shrink height album item image"
 msgstr "Reduzierte Bildhöhe"
@@ -884,10 +881,8 @@ msgstr ""
 "Der Cache-Verzeichnis \"%directory%\" ist nicht vorhanden. Bitte erstellen "
 "Sie es und machen Sie es für den Webserver beschreibbar."
 
-#, fuzzy
-#| msgid "The date will be included in the headline"
 msgid "The date will be included in the headline and will be used for sorting."
-msgstr "Das Datum wird in die Überschrift eingefügt"
+msgstr "Das Datum wird in der Überschrift und für die Sortierung verwendet."
 
 msgid "The enable shrinking option"
 msgstr "Die Option zur Bildverkleinerung"
@@ -901,10 +896,8 @@ msgstr "Die Option zur Anzeige der eigenen Alben im Benutzerkonto"
 msgid "The maximum amount of items to be shown."
 msgstr "Die maximale Anzahl von Elementen, die angezeigt werden."
 
-#, fuzzy
-#| msgid "The maximum image height in pixels."
 msgid "The maximum height of a row in the image album."
-msgstr "Die maximale Bildhöhe in Pixel."
+msgstr "Die maximale Höhe einer Zeile in der Albenansicht."
 
 msgid "The maximum image height in pixels."
 msgstr "Die maximale Bildhöhe in Pixel."
@@ -1037,18 +1030,11 @@ msgstr ""
 "Warnung! Das Upload-Verzeichnis \"%path%\" besteht, ist allerdings nicht vom "
 "Webserver beschreibbar."
 
-#, fuzzy
-#| msgid ""
-#| "Welcome to the album item section of the Fine art photographer "
-#| "application."
 msgid "Welcome to the album item section of the Event photos application."
-msgstr "Willkommen im Abschnitt Bild des Fotografenmoduls."
+msgstr "Willkommen im Bildbereich des Eventfotomoduls."
 
-#, fuzzy
-#| msgid ""
-#| "Welcome to the album section of the Fine art photographer application."
 msgid "Welcome to the album section of the Event photos application."
-msgstr "Willkommen Sie in der Album-Sektion des Fotografenmoduls."
+msgstr "Willkommen im Albenbereich des Eventfotomoduls."
 
 msgid ""
 "Whether to add a link to album items of the current user on his account page"
@@ -1087,13 +1073,12 @@ msgstr "Mit ausgewählten Alben"
 msgid "Workflows"
 msgstr "Arbeitsabläufe"
 
-#, fuzzy
-#| msgid "You may want to tell a bit about the shooting and the parameters."
 msgid ""
 "You may want to tell a bit about the shooting. The exif parameters are "
 "visible in detail view of the image."
 msgstr ""
-"Vielleicht möchten ein wenig über das Shooting und die Parameter erzählen."
+"Vielleicht möchten ein wenig über das Shooting und die Parameter erzählen. "
+"Die Exif Rohdaten werden in der Detailansicht des Bildes dargestellt."
 
 msgid "album"
 msgstr "Album"

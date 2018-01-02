@@ -12,6 +12,8 @@
 
 namespace RK\EventPhotosModule\Form\Type\QuickNavigation;
 
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\FormBuilderInterface;
 use RK\EventPhotosModule\Form\Type\QuickNavigation\Base\AbstractAlbumItemQuickNavType;
 
 /**
@@ -19,5 +21,47 @@ use RK\EventPhotosModule\Form\Type\QuickNavigation\Base\AbstractAlbumItemQuickNa
  */
 class AlbumItemQuickNavType extends AbstractAlbumItemQuickNavType
 {
-    // feel free to extend the base form type class here
+    /**
+     * Adds sorting fields.
+     *
+     * @param FormBuilderInterface $builder The form builder
+     * @param array                $options The options
+     */
+    public function addSortingFields(FormBuilderInterface $builder, array $options = [])
+    {
+        $builder
+            ->add('sort', ChoiceType::class, [
+                'label' => $this->__('Sort by'),
+                'attr' => [
+                    'class' => 'input-sm'
+                ],
+                'choices' =>             [
+                    $this->__('Image') => 'image',
+                    $this->__('Copyright') => 'copyright',
+                    $this->__('Image title') => 'imageTitle',
+                    $this->__('Image description') => 'imageDescription',
+                    $this->__('Creation date') => 'createdDate',
+                    $this->__('Creator') => 'createdBy'
+                ],
+                'choices_as_values' => true,
+                'required' => true,
+                'expanded' => false
+            ])
+            ->add('sortdir', ChoiceType::class, [
+                'label' => $this->__('Sort direction'),
+                'empty_data' => 'asc',
+                'attr' => [
+                    'class' => 'input-sm'
+                ],
+                'choices' => [
+                    $this->__('Ascending') => 'asc',
+                    $this->__('Descending') => 'desc'
+                ],
+                'choices_as_values' => true,
+                'required' => true,
+                'expanded' => false
+            ])
+        ;
+    }
+
 }

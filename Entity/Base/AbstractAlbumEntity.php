@@ -64,9 +64,9 @@ abstract class AbstractAlbumEntity extends EntityAccess implements Translatable
      * Choose a title for your album. The event name seem to be a good choice. Date and creator name will be automatically included.
      *
      * @Gedmo\Translatable
-     * @ORM\Column(length=31)
+     * @ORM\Column(length=32)
      * @Assert\NotBlank()
-     * @Assert\Length(min="0", max="31")
+     * @Assert\Length(min="0", max="32")
      * @var string $albumTitle
      */
     protected $albumTitle = '';

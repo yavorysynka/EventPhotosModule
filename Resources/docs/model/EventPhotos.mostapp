@@ -19,7 +19,7 @@ application "EventPhotos" targets ZK15 {
     separateAdminTemplates true
     displayActionsStyle BUTTON_GROUP
     skipFiles "README.md,\r\nCHANGELOCK.md,\r\nResources/public/css/custom.css"
-    markFiles "Helper/EntityDisplayHelper.php,\r\nResources/views/base.html.twig,\r\nResources/views/AlbumItem/includeDisplayItemListMany.html.twig,\r\nResources/views/AlbumItem/view.html.twig,\r\nResources/views/AlbumItem/display.html.twig,\r\nResources/views/Album/display.html.twig,\r\nResources/views/Album/view.html.twig,\r\nResources/views/Album/viewQuickNav.html.twig,\r\nEntity/Repository/AlbumRepository.php, \r\nEventPhotosModuleInstaller.php,\r\n.gitignore,\r\nTwig/TwigExtension.php,\r\nResources/public/js/RKEventPhotosModule.js"
+    markFiles "Helper/EntityDisplayHelper.php,\r\nResources/views/base.html.twig,\r\nResources/views/AlbumItem/includeDisplayItemListMany.html.twig,\r\nResources/views/AlbumItem/view.html.twig,\r\nResources/views/AlbumItem/display.html.twig,\r\nResources/views/Album/display.html.twig,\r\nResources/views/Album/view.html.twig,\r\nResources/views/Album/viewQuickNav.html.twig,\r\nEntity/Repository/AlbumRepository.php, \r\nEventPhotosModuleInstaller.php,\r\n.gitignore,\r\nTwig/TwigExtension.php,\r\nResources/public/js/RKEventPhotosModule.js,\r\nForm/Type/QuickNavigation/AlbumQuickNavType.php"
     entities {
         entity "album" leading categorisable {
             documentation "Please add your photos only to your own album."
@@ -32,7 +32,7 @@ application "EventPhotos" targets ZK15 {
             fields {
                 string "albumTitle" translatable {
                     documentation "Choose a title for your album. The event name seem to be a good choice. Date and creator name will be automatically included."
-                length 31
+                length 32
                 },
                 datetime "albumDate" {
                     documentation "The date will be included in the headline and will be used for sorting."

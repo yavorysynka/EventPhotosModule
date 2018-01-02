@@ -9,7 +9,7 @@
 
     {{ block('page_nav_links') }}
 
-    {{ include('@RKEventPhotosModule/AlbumItem/viewQuickNav.html.twig') }}{# see template file for available options #}
+    {{ include('@RKEventPhotosModule/AlbumItem/viewQuickNav.html.twig', {workflowStateFilter:false, searchFilter:false}) }}{# see template file for available options #}
 
     {% if routeArea == 'admin' %}
     <form action="{{ path('rkeventphotosmodule_albumitem_' ~ routeArea ~ 'handleselectedentries') }}" method="post" id="albumItemsViewForm" class="form-horizontal" role="form">

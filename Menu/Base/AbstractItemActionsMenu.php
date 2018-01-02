@@ -135,7 +135,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                 $menu[$title]->setAttribute('icon', 'fa fa-trash-o');
             }
             if ($context == 'display') {
-                $title = $this->__('Back to overview', 'rkeventphotosmodule');
+                $title = $this->__('Albums list', 'rkeventphotosmodule');
                 $menu->addChild($title, [
                     'route' => $routePrefix . $routeArea . 'view'
                 ]);
@@ -232,7 +232,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                 $menu[$title]->setAttribute('icon', 'fa fa-trash-o');
             }
             if ($context == 'display') {
-                $title = $this->__('Back to overview', 'rkeventphotosmodule');
+                $title = $this->__('Album items list', 'rkeventphotosmodule');
                 $menu->addChild($title, [
                     'route' => $routePrefix . $routeArea . 'view'
                 ]);

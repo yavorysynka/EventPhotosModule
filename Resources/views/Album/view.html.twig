@@ -10,7 +10,7 @@
 	
     {{ block('page_nav_links') }}
 
-    {{ include('@RKEventPhotosModule/Album/viewQuickNav.html.twig') }}{# see template file for available options #}
+    {{ include('@RKEventPhotosModule/Album/viewQuickNav.html.twig', {workflowStateFilter:false, searchFilter:false}) }}{# see template file for available options #}
 
         
 		<div>
