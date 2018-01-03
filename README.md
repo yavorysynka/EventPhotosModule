@@ -12,6 +12,8 @@ The idea of this module: Create a very simple album to share some nice photo col
    Note this step is optional as the install process can create these folders, too.
 4. Make the directory `/userdata/RKEventPhotosModule/` writable including all sub folders.
 
+Remark: If you are using big images you should increase the memory in ``php.ini`` or ``.htaccess``. ``512M`` or ``1G`` would be nice.
+
 ## Module capabilities
 
 ### Hooks
