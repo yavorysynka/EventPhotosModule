@@ -1,0 +1,10 @@
+"project_identifier": "eventphotosmodule"
+"api_key": "aee3e20d4afb8ad7afe1e95b19395cde"                                   #can be found in your project settings page
+"base_path": "/"
+
+"files": [
+  {
+    "source" : "/Resources/translations/*.template.po",                                          #source files filter
+    "translation" : "/Resources/translations/%file_name%.%two_letters_code%.po"        #where translations are stored
+  }
+]
