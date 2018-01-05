@@ -1,8 +1,7 @@
 files:
   - source: /Resources/translations/*.template.po
     ignore:
-      - /Resources/translations/route.template.po
+      - /Resources/translations/route.*
     translation: /Resources/translations/%file_name%.%two_letters_code%.po
-    translation_replace: {
-    .template. : .
-    }
+    translation_replace:
+      .template.: .
