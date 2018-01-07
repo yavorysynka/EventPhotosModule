@@ -210,11 +210,11 @@ abstract class AbstractWorkflowHelper
         }
     
         if ($title == '') {
-            if (substr($actionId, 0, 6) == 'update') {
+            if ($actionId == 'update') {
                 $title = $this->translator->__('Update');
-            } elseif (substr($actionId, 0, 5) == 'trash') {
+            } elseif ($actionId == 'trash') {
                 $title = $this->translator->__('Trash');
-            } elseif (substr($actionId, 0, 7) == 'recover') {
+            } elseif ($actionId == 'recover') {
                 $title = $this->translator->__('Recover');
         	}
         }
@@ -253,7 +253,7 @@ abstract class AbstractWorkflowHelper
                 break;
         }
     
-        if ($buttonClass == '' && substr($actionId, 0, 6) == 'update') {
+        if ($buttonClass == '' && $actionId == 'update') {
             $buttonClass = 'success';
     	}
     

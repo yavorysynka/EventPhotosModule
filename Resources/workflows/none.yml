@@ -1,4 +1,4 @@
-workflow:
+framework:
     workflows:
         rkeventphotosmodule_none:
             type: state_machine
@@ -16,30 +16,24 @@ workflow:
                 - trashed
                 - deleted
             transitions:
-                recoverdeferred:
-                    from: trashed
-                    to: deferred
-                recoverapproved:
-                    from: trashed
-                    to: approved
                 defer:
                     from: initial
                     to: deferred
                 submit:
                     from: [initial, deferred]
                     to: approved
-                updateapproved:
+                update:
                     from: approved
                     to: approved
-                updatedeferred:
+                update:
                     from: deferred
                     to: deferred
-                trashdeferred:
+                trash:
                     from: deferred
                     to: trashed
                 delete:
                     from: [deferred, approved, trashed]
                     to: deleted
-                trashapproved:
+                trash:
                     from: approved
                     to: trashed

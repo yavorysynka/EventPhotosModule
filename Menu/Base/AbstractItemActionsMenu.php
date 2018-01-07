@@ -122,7 +122,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                     $menu[$title]->setAttribute('icon', 'fa fa-files-o');
                 }
             }
-            if ($permissionApi->hasPermission($component, $instance, ACCESS_DELETE)) {
+            if ($permissionApi->hasPermission($component, $instance, ACCESS_DELETE) || ($isOwner && $permissionApi->hasPermission($component, $instance, ACCESS_EDIT))) {
                 $title = $this->__('Delete', 'rkeventphotosmodule');
                 $menu->addChild($title, [
                     'route' => $routePrefix . $routeArea . 'delete',
@@ -219,7 +219,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                     $menu[$title]->setAttribute('icon', 'fa fa-files-o');
                 }
             }
-            if ($permissionApi->hasPermission($component, $instance, ACCESS_DELETE)) {
+            if ($permissionApi->hasPermission($component, $instance, ACCESS_DELETE) || ($isOwner && $permissionApi->hasPermission($component, $instance, ACCESS_EDIT))) {
                 $title = $this->__('Delete', 'rkeventphotosmodule');
                 $menu->addChild($title, [
                     'route' => $routePrefix . $routeArea . 'delete',

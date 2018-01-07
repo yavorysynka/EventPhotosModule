@@ -5,13 +5,11 @@ services:
         class: RK\EventPhotosModule\Form\Type\Field\MultiListType
         arguments:
             - "@rk_eventphotos_module.listentries_helper"
-        tags:
-            - { name: form.type }
+        tags: ['form.type']
     
     rk_eventphotos_module.form.type.field.translation:
         class: RK\EventPhotosModule\Form\Type\Field\TranslationType
-        tags:
-            - { name: form.type }
+        tags: ['form.type']
     
     rk_eventphotos_module.form.type.field.upload:
         class: RK\EventPhotosModule\Form\Type\Field\UploadType
@@ -20,5 +18,4 @@ services:
             - "@request_stack"
             - "@rk_eventphotos_module.image_helper"
             - "@rk_eventphotos_module.upload_helper"
-        tags:
-            - { name: form.type }
+        tags: ['form.type']

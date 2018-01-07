@@ -7,8 +7,7 @@ services:
             - "@translator.default"
             - "@rk_eventphotos_module.listentries_helper"
             - "@rk_eventphotos_module.feature_activation_helper"
-        tags:
-            - { name: form.type }
+        tags: ['form.type']
     
     rk_eventphotos_module.form.type.albumitemquicknav:
         class: RK\EventPhotosModule\Form\Type\QuickNavigation\AlbumItemQuickNavType
@@ -18,8 +17,7 @@ services:
             - "@rk_eventphotos_module.entity_display_helper"
             - "@rk_eventphotos_module.listentries_helper"
             - "@rk_eventphotos_module.feature_activation_helper"
-        tags:
-            - { name: form.type }
+        tags: ['form.type']
     
     rk_eventphotos_module.form.handler.common:
         abstract: true
@@ -59,8 +57,7 @@ services:
             - "@rk_eventphotos_module.translatable_helper"
             - "@rk_eventphotos_module.listentries_helper"
             - "@rk_eventphotos_module.feature_activation_helper"
-        tags:
-            - { name: form.type }
+        tags: ['form.type']
     
     rk_eventphotos_module.form.handler.albumitem:
         class: RK\EventPhotosModule\Form\Handler\AlbumItem\EditHandler
@@ -77,15 +74,13 @@ services:
             - "@rk_eventphotos_module.translatable_helper"
             - "@rk_eventphotos_module.listentries_helper"
             - "@rk_eventphotos_module.feature_activation_helper"
-        tags:
-            - { name: form.type }
+        tags: ['form.type']
     
     rk_eventphotos_module.form.type.block.itemlist:
         class: RK\EventPhotosModule\Block\Form\Type\ItemListBlockType
         arguments:
             - "@translator.default"
-        tags:
-            - { name: form.type }
+        tags: ['form.type']
     
     rk_eventphotos_module.form.type.block.item:
         class: RK\EventPhotosModule\Block\Form\Type\ItemBlockType
@@ -93,29 +88,25 @@ services:
             - "@translator.default"
             - "@rk_eventphotos_module.entity_factory"
             - "@rk_eventphotos_module.entity_display_helper"
-        tags:
-            - { name: form.type }
+        tags: ['form.type']
     
     rk_eventphotos_module.form.type.albumfinder:
         class: RK\EventPhotosModule\Form\Type\Finder\AlbumFinderType
         arguments:
             - "@translator.default"
             - "@rk_eventphotos_module.feature_activation_helper"
-        tags:
-            - { name: form.type }
+        tags: ['form.type']
     
     rk_eventphotos_module.form.type.albumitemfinder:
         class: RK\EventPhotosModule\Form\Type\Finder\AlbumItemFinderType
         arguments:
             - "@translator.default"
             - "@rk_eventphotos_module.feature_activation_helper"
-        tags:
-            - { name: form.type }
+        tags: ['form.type']
     
     rk_eventphotos_module.form.type.config:
         class: RK\EventPhotosModule\Form\Type\ConfigType
         arguments:
             - "@translator.default"
             - "@rk_eventphotos_module.listentries_helper"
-        tags:
-            - { name: form.type }
+        tags: ['form.type']

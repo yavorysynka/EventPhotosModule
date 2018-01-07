@@ -18,6 +18,7 @@ use RK\EventPhotosModule\Form\Type\AlbumType;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use RuntimeException;
+use Zikula\UsersModule\Constant as UsersConstant;
 use RK\EventPhotosModule\Helper\FeatureActivationHelper;
 
 /**
@@ -109,7 +110,7 @@ abstract class AbstractEditHandler extends EditHandler
         $entity = parent::initEntityForEditing();
     
         // only allow editing for the owner or people with higher permissions
-        $currentUserId = $this->currentUserApi->isLoggedIn() ? $this->currentUserApi->get('uid') : 1;
+        $currentUserId = $this->currentUserApi->isLoggedIn() ? $this->currentUserApi->get('uid') : UsersConstant::USER_ID_ANONYMOUS;
         $isOwner = null !== $entity && null !== $entity->getCreatedBy() && $currentUserId == $entity->getCreatedBy()->getUid();
         if (!$isOwner && !$this->permissionApi->hasPermission($this->permissionComponent, $this->idValue . '::', ACCESS_ADD)) {
             throw new AccessDeniedException();

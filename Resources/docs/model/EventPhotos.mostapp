@@ -1,10 +1,10 @@
-application "EventPhotos" targets ZK15 {
+application "EventPhotos" targets ZK20 {
     documentation "Event Photos Module is offering the possibility to share interesting photos. If you want to share yourself your photos please contact the site administrator and ask for the rights."
     vendor "RK"
     author "Ralf Koester"
     email "ralf@familie-koester.de"
     url "http://k62.de"
-    version "1.0.0"
+    version "2.0.2"
     prefix "event"
     generateModerationBlock false
     generateModerationPanel false

@@ -81,7 +81,7 @@ abstract class AbstractAjaxController extends AbstractController
         }
         
         // return response
-        return new JsonResponse($slimItems);
+        return $this->json($slimItems);
     }
     
     /**
@@ -196,7 +196,7 @@ abstract class AbstractAjaxController extends AbstractController
             }
         }
         
-        return new JsonResponse($resultItems);
+        return $this->json($resultItems);
     }
     
     /**
@@ -222,7 +222,7 @@ abstract class AbstractAjaxController extends AbstractController
         $assignedId = $request->request->getInt('assignedId', 0);
         
         if (!$subscriberOwner || !$subscriberAreaId || !$subscriberObjectId || !$assignedEntity || !$assignedId) {
-            return new JsonResponse($this->__('Error: invalid input.'), JsonResponse::HTTP_BAD_REQUEST);
+            return $this->json($this->__('Error: invalid input.'), JsonResponse::HTTP_BAD_REQUEST);
         }
         
         $subscriberUrl = !empty($subscriberUrl) ? unserialize($subscriberUrl) : [];
@@ -241,7 +241,7 @@ abstract class AbstractAjaxController extends AbstractController
         $entityManager->flush();
         
         // return response
-        return new JsonResponse([
+        return $this->json([
             'id' => $assignment->getId()
         ]);
     }
@@ -263,7 +263,7 @@ abstract class AbstractAjaxController extends AbstractController
         
         $id = $request->request->getInt('id', 0);
         if (!$id) {
-            return new JsonResponse($this->__('Error: invalid input.'), JsonResponse::HTTP_BAD_REQUEST);
+            return $this->json($this->__('Error: invalid input.'), JsonResponse::HTTP_BAD_REQUEST);
         }
         
         $entityFactory = $this->get('rk_eventphotos_module.entity_factory');
@@ -276,7 +276,7 @@ abstract class AbstractAjaxController extends AbstractController
         $query->execute();
         
         // return response
-        return new JsonResponse([
+        return $this->json([
             'id' => $id
         ]);
     }
