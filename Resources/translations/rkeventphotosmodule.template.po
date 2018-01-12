@@ -6,14 +6,19 @@ msgstr ""
 
 msgid "%albumDate%, %albumTitle%"
 msgstr "%albumDate%, %albumTitle%"
+
 msgid "%imageTitle%"
 msgstr "%imageTitle%"
+
 msgid "10"
 msgstr "10"
+
 msgid "100"
 msgstr "100"
+
 msgid "12"
 msgstr "12"
+
 msgid "15"
 msgstr "15"
 msgid "16"
