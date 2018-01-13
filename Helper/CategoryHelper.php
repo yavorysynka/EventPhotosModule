@@ -20,4 +20,9 @@ use RK\EventPhotosModule\Helper\Base\AbstractCategoryHelper;
 class CategoryHelper extends AbstractCategoryHelper
 {
     // feel free to extend the category helper here
+protected function requireAccessForAll($entity)
+{
+    return true;
+}
+
 }
