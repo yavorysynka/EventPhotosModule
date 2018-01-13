@@ -63,7 +63,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
         $permissionApi = $this->container->get('zikula_permissions_module.api.permission');
         $currentUserApi = $this->container->get('zikula_users_module.current_user');
         $entityDisplayHelper = $this->container->get('rk_eventphotos_module.entity_display_helper');
-        $menu->setChildrenAttribute('class', 'list-inline');
+        $menu->setChildrenAttribute('class', 'list-inline item-actions');
 
         $currentUserId = $currentUserApi->isLoggedIn() ? $currentUserApi->get('uid') : UsersConstant::USER_ID_ANONYMOUS;
         if ($entity instanceof AlbumEntity) {
@@ -122,7 +122,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                     $menu[$title]->setAttribute('icon', 'fa fa-files-o');
                 }
             }
-            if ($permissionApi->hasPermission($component, $instance, ACCESS_DELETE)) {
+            if ($permissionApi->hasPermission($component, $instance, ACCESS_DELETE) || ($isOwner && $permissionApi->hasPermission($component, $instance, ACCESS_EDIT))) {
                 $title = $this->__('Delete', 'rkeventphotosmodule');
                 $menu->addChild($title, [
                     'route' => $routePrefix . $routeArea . 'delete',
@@ -219,7 +219,7 @@ class AbstractItemActionsMenu implements ContainerAwareInterface
                     $menu[$title]->setAttribute('icon', 'fa fa-files-o');
                 }
             }
-            if ($permissionApi->hasPermission($component, $instance, ACCESS_DELETE)) {
+            if ($permissionApi->hasPermission($component, $instance, ACCESS_DELETE) || ($isOwner && $permissionApi->hasPermission($component, $instance, ACCESS_EDIT))) {
                 $title = $this->__('Delete', 'rkeventphotosmodule');
                 $menu->addChild($title, [
                     'route' => $routePrefix . $routeArea . 'delete',

@@ -4,7 +4,7 @@ application "EventPhotos" targets ZK15 {
     author "Ralf Koester"
     email "ralf@familie-koester.de"
     url "http://k62.de"
-    version "1.0.0"
+    version "1.0.2"
     prefix "event"
     generateModerationBlock false
     generateModerationPanel false

@@ -24,6 +24,7 @@ use Zikula\Component\SortableColumns\SortableColumns;
 use Zikula\Core\Controller\AbstractController;
 use Zikula\Core\Response\PlainResponse;
 use Zikula\Core\RouteUrl;
+use Zikula\UsersModule\Constant\UsersConstant;
 use RK\EventPhotosModule\Entity\AlbumEntity;
 use RK\EventPhotosModule\Helper\FeatureActivationHelper;
 
@@ -341,7 +342,15 @@ abstract class AbstractAlbumController extends AbstractController
         $objectType = 'album';
         $permLevel = $isAdmin ? ACCESS_ADMIN : ACCESS_DELETE;
         if (!$this->hasPermission('RKEventPhotosModule:' . ucfirst($objectType) . ':', '::', $permLevel)) {
-            throw new AccessDeniedException();
+            if ($isAdmin) {
+                throw new AccessDeniedException();
+            }
+            $currentUserApi = $this->get('zikula_users_module.current_user');
+            $currentUserId = $currentUserApi->isLoggedIn() ? $currentUserApi->get('uid') : UsersConstant::USER_ID_ANONYMOUS;
+            $isOwner = $currentUserId > 0 && null !== $album->getCreatedBy() && $currentUserId == $album->getCreatedBy()->getUid();
+            if (!$isOwner || !$this->hasPermission('RKEventPhotosModule:' . ucfirst($objectType) . ':', '::', ACCESS_EDIT)) {
+                throw new AccessDeniedException();
+            }
         }
         $logger = $this->get('logger');
         $logArgs = ['app' => 'RKEventPhotosModule', 'user' => $this->get('zikula_users_module.current_user')->get('uname'), 'entity' => 'album', 'id' => $album->getKey()];
