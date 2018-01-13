@@ -84,10 +84,12 @@
 		<div id="collapseListgroup1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="collapseExifHeadline1" aria-expanded="false" style="">
 			<ul class="list-group">
 				{% for fieldName, fieldValue in albumItem.imageMeta %}
+				{%if fieldName in ['filepath', 'uri']%}
+				{% else %}
 					<li class="list-group-item"><strong>{{ fieldName|replace({ 'exif.': '' }) }}:</strong> {% if fieldValue is iterable %}{{ fieldValue|join(', ') }}{% else %}{{ fieldValue }}{% endif %}</li>
+				{%endif%}
 				{% endfor %}
 			</ul>
-		<div class="panel-footer">Footer</div>
 		</div>
     </div>
 </div>
